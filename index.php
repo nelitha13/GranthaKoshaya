@@ -45,13 +45,13 @@
         <div class="small-container">
             <div class="row">
                 <div class="col-3">
-                    <img src="images/C5.png" alt="" />
+                    <img src="images\book_collection.png" alt="" />
                 </div>
                 <div class="col-3">
-                    <img src="images/C4.jpeg" alt="" />
+                    <img src="images\digital library.jpg" alt="" />
                 </div>
                 <div class="col-3">
-                    <img src="images/I4.jpeg" alt="" />
+                    <img src="images\periodical.png" alt="" />
                 </div>
             </div>
         </div>

@@ -1,3 +1,8 @@
+<head>
+<link rel="icon" type="image/x-icon" href="images\Logo.png">
+</head>
+
+
 <?php
 include_once('src/conn.php');
 ?>

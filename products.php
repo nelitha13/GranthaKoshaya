@@ -31,7 +31,7 @@
 
     <div class="small-container">
         <div class="row row-2">
-            <h2>Book Categories</h2>
+            <h2>All Books</h2>
         </div>
 
         <div class="row">

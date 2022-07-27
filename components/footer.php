@@ -16,7 +16,7 @@
                                 src="images/facebook.png" width="30" height="30"></a></li>
                     <li><a href="https://www.instagram.com/"><img src="images/instagram.png" width="30"
                                 height="30"></a></li>
-                    <li><a href="https://github.com/nelitha14/GranthaKoshaya-eLibrary.git"><img src="images\GitHub.png" width="30"
+                    <li><a href="https://github.com/nelitha14/GranthaKoshaya.git"><img src="images\GitHub.png" width="30"
                                 height="30"></a></li>
                 </ul>
             </div>
