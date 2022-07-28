@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-2">
                     <h1>
-                        ග්‍රන්ථකෝෂය | GranthaKoshaya<br />
+                        ග්‍රන්ථකෝෂය📖<br>GranthaKoshaya<br />
  
                     </h1>
                     <p>
@@ -58,13 +58,13 @@
     </div>
     <!----- Featurd Books--------->
     <div class="small-container">
-        <h2 class="title">Featured Books</h2>
+        <h1 class="title">Featured Books</h1>
         <div class="row">
 
             <?php getMostFamousProducts() ?>
 
         </div>
-        <h2 class="title">Latest Books</h2>
+        <h1 class="title">Latest Books</h1>
         <div class="row">
 
             <?php getLatestProducts() ?>
@@ -76,7 +76,21 @@
 
     <?php getMostFamousOne() ?>
 
+    <br>
+
+    <!---------Authors--------->
+
+    <div class="small-container">
+        <h1 class="title">Authors</h1>
+        <div class="row">
+
+            <?php getMostFamousProducts() ?>
+
+    </div>
+
+
     <!------ Testimonial  ------>
+<a href="aboutus.php">
     <div class="testimonial">
         <div class="small-container">
             <div class="row">
@@ -99,6 +113,7 @@
             </div>
         </div>
     </div>
+</a>
 
         <!-- Footer -->
 

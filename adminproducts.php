@@ -22,6 +22,7 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://kit.fontawesome.com/2676e383a1.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="images\Logo.png">
     <style>
     .fa-trash-alt {
         font-size: 20px;

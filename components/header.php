@@ -1,8 +1,3 @@
-<head>
-<link rel="icon" type="image/x-icon" href="images\Logo.png">
-</head>
-
-
 <?php
 include_once('src/conn.php');
 ?>
@@ -117,7 +112,7 @@ include_once('src/conn.php');
     </div>
     <nav>
         <form method="post" action="src/server.php">
-            <input type="text" style="display:inline-block;height:25px;width: 200px;" placeholder="Search"
+            <input type="text" style="display:inline-block;height:25px;width: 200px;" placeholder="Type Here to Search"
                 name="search" />
             <input type="submit" style="display:inline-block;height:25px;width: 75px;" value="Search" />
         </form><br />
@@ -133,7 +128,7 @@ include_once('src/conn.php');
                     </div>
                 </div>
             </li>
-
+            <li><a href="authors.php">Authors</a></li>
             <?php if (isset($_SESSION['user_email'])) { ?>
 
             <?php if($_SESSION['is_admin']) { ?>

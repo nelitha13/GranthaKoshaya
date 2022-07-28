@@ -17,7 +17,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-
+    <link rel="icon" type="image/x-icon" href="images\Logo.png">
 </head>
 
 <body>

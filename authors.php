@@ -29,42 +29,32 @@
 
     </div>
 
-    <div class="small-container">
-        <div class="row row-2">
-            <h2>All Books</h2>
-        </div>
 
-        <div class="row">
 
-            <?php 
-            if(isset($_SESSION['search'])){
-                getProductsBySearch($_SESSION['search']);
-                unset($_SESSION['search']);
-            }else{
-                if(isset($_GET['cat'])){
-                    if($_GET['cat'] == 'innovation'){
-                        getAllInnovationProducts();
-                    }else if($_GET['cat'] == 'crafts'){
-                        getAllCraftsProducts();
-                    }else{
-                        invalidCategory();
-                    }
-                }else{
-                    getAllProducts();
-                }      
-            }
-             ?>
 
-        </div>
 
-        <div class="page-btn">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>&#8594;</span>
-        </div>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Footer -->
     <div style="height:300px !important;"></div>
