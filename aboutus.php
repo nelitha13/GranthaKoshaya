@@ -62,8 +62,7 @@
         <td>
             <div class="container-fluid bg-3 text-center">
                 <h3>OUR VISION</h3>
-                <p style="color:black" text-align="justify">The GranthaKoshaya eLibrary is mainly a research and a reference library.<br>It intends to provide library resources as well as information to all Sri Lankans through the GranthaKoshaya eLibrary.
-                </p><br>
+                <p style="color:black" text-align="justify">The library's goal is to create an environment that fosters intellectual curiosity and the social, cultural and professional development of students, faculty and staff.</p><br>
                 <div class="row">
                     <div class="container-fluid bg-3 text-center">
                         <h3>OUR MISSION</h3>

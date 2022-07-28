@@ -29,10 +29,12 @@
 
     </div>
 
+    <br>
+
     <div class="small-container">
-        <div class="row row-2">
-            <h2>All Books</h2>
-        </div>
+        <h1 class="title">All Books</h1>
+        <div class="row">
+    </div>
 
         <div class="row">
 
