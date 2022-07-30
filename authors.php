@@ -27,14 +27,20 @@
     <div class="container">
         <?php include_once("src/functions.php");?>
 
+        <div class="small-container">
+            <h1 class="title">Authors</h1>
+            <div class="row">
+        </div>
+        <div style="width: 80%; display: inline; text-align: center;">
+            <?php getAuthorDetails(); ?>
+        </div>
+            
+
     </div>
 
     <br>
 
-    <div class="small-container">
-        <h1 class="title">Authors</h1>
-        <div class="row">
-    </div>
+
 
 
 

@@ -181,7 +181,10 @@ include_once('src/conn.php');
         <span class="close">&times;</span>
 
         <form id="form" class="add_product" method="post" enctype="multipart/form-data">
-            <h2> ADD BOOKS </h2>
+        <div class="small-container">
+        <h2 class="title">ADD BOOKS</h2>
+
+    </div>
             <input type="text" class="add_product_input" name="name" placeholder="Name" id="add_product_name_id" /><br>
             <input type="text" class="add_product_input" name="description" placeholder="Description"
                 id="add_product_description_id" /><br>

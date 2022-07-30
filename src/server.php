@@ -190,7 +190,7 @@
 	{
 		$keyword = $_POST['search'];
 		$_SESSION['search'] = $keyword;
-		header('location: ../products.php');
+		header('location: ../search-results.php');
 	}
 
 

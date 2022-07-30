@@ -499,6 +499,33 @@ function getLatestProducts() {
 ?>
 
 
+<!-- Get All authors -->
+<?php 
+
+function getAuthorDetails() {
+
+   global $db;
+
+    $query = "SELECT * FROM author";
+    $result = mysqli_query($db,$query);
+    
+    while($row = mysqli_fetch_assoc($result)){
+?>
+
+
+    <div style="border:1px solid black;margin:0 5px;position: relative">
+        <img src="images/product/5006c1.jpeg" alt="Image" style="width: 200px; height:200px;"/>
+
+        <div style="position: absolute;top 10;left 20;"><?php echo $row['Author']; ?></div>
+
+    </div>
+<?php
+
+    }
+}
+?>
+
+
 
 
 <!--  Get All Items -->
