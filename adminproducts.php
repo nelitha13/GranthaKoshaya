@@ -83,6 +83,13 @@
         <?php include_once("src/functions.php");?>
     </div>
 
+    <div class="small-container">
+            <h1 class="title">My Books 
+                    <?php if($_SESSION['is_admin']) { ?>
+                        <id="myBtn"><img src="images/add.png" alt="" width="30px" height="30px" />
+                    <?php } ?>
+            </h1>
+
     <!-- Cart Items Details -->
     <div class="small-container cart-page">
         <table>
@@ -254,4 +261,5 @@ $(document).ready(function() {
 
 
 });
+
 </script>

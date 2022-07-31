@@ -119,15 +119,8 @@ include_once('src/conn.php');
 
         <ul id="MenuItems">
             <li><a href="index.php">Home</a></li>
-            <li>
-                <div class="dropdown">
-                    <a href="products.php" class="dropbtn">Books</a>
-                    <div class="dropdown-content">
-                        <a href="products.php?cat=innovation">Innovation</a>
-                        <a href="products.php?cat=crafts">Crafts</a>
-                    </div>
-                </div>
-            </li>
+            <li><a href="products.php" class="dropbtn">Books</a></li>
+            <li><a href="categories.php">Categories</a></li>
             <li><a href="authors.php">Authors</a></li>
             <?php if (isset($_SESSION['user_email'])) { ?>
 
@@ -149,14 +142,13 @@ include_once('src/conn.php');
             <li><a href="aboutus.php">About Us</a></li>
 
 
-            <!-- TODo: 22:20 -->
         </ul>
 
         <?php if (isset($_SESSION['user_email'])) { ?>
 
         <?php if (!$_SESSION['is_admin']) { ?>
 
-        <a href="cart.php"><img src="images/cart.png" alt="" width="30px" height="30px" /></a>
+        <span title="My Cart"><a href="cart.php"><img src="images/cart.png" alt="" width="30px" height="30px" /></a></span>
 
         <?php } ?>
 
@@ -200,6 +192,7 @@ include_once('src/conn.php');
             <input type="number" min="1" class="add_product_input" name="iqty" placeholder="Initial Quantity"
                 id="add_product_iqty_id" /><br>
             <input type="file" class="add_product_input" name="image" placeholder="Image" id="add_product_img_id" /><br>
+            <input type="file" class="add_product_input" name="PDF" placeholder="PDF File" id="add_product_img_id" /><br>
             <input type="text" hidden name="product_add" value="set" /><br>
             <input type="submit" name="product_add" style="
                 width:100%;

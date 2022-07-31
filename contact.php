@@ -79,19 +79,6 @@
         text-align: center;
         margin-top: -20px;
 
-        p {
-            color: #3895dd;
-            padding-bottom: -5px;
-            font-size: 16px;
-        }
-
-        a {
-            border-bottom: 1px dashed #363636;
-            color: #040404;
-            text-decoration: underline;
-            margin-left: 5px;
-        }
-
     }
 
     .checkbox {

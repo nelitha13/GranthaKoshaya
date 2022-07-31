@@ -238,7 +238,8 @@ function getProductById($id) {
         ?>
        
         <input type="number" value="0" id="addtocart_qty" max="<?php echo $stock ?>" min="0" />
-        <span href="" id="addtocart_btn" class="btn">Add to Cart</span>
+        <span><a href="cart.php" id="addtocart_btn" class="btn">Add to Cart</a></span>
+        <a href="" target="_blank" class="btn">Read Book (Free)</a>
       
         <?php 
                 }
@@ -407,7 +408,6 @@ function getMostFamousProducts() {
 
 
 
-
 <!--  Get All Items -->
 <?php 
 
@@ -513,18 +513,106 @@ function getAuthorDetails() {
 ?>
 
 
-    <div style="border:1px solid black;margin:0 5px;position: relative">
-        <img src="images/product/5006c1.jpeg" alt="Image" style="width: 200px; height:200px;"/>
+    <div style="
+    border:1px solid;
+    margin: 15px;
+    padding:0;
+    height: 250px;
+    width: 20%;
+    position: relative;
+    background-image: url('images/product/5006c1.jpeg');
+    display: inline-block;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 3px #000000;
+    ">
+        
+        <div style="
+        display: inline-block;
+        position: absolute;
+        top : 150px;
+        left: 10%; 
+        width: 80%;
+        height: 100px;
+        color: #555;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        ">
+        <?php echo $row['Author']; ?>
 
-        <div style="position: absolute;top 10;left 20;"><?php echo $row['Author']; ?></div>
+        <div class="title" style="margin-top: 5px;"></div>
 
     </div>
+
+
+
+    </div>
+
+
 <?php
 
     }
 }
 ?>
 
+
+<!-- Get All categories -->
+<?php 
+
+function getCategories() {
+
+   global $db;
+
+    $query = "SELECT * FROM category";
+    $result = mysqli_query($db,$query);
+    
+    while($row = mysqli_fetch_assoc($result)){
+?>
+
+
+    <div style="
+    border:1px solid;
+    margin: 15px;
+    padding:0;
+    height: 250px;
+    width: 20%;
+    position: relative;
+    background-image: url('images/product/5006c1.jpeg');
+    display: inline-block;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 3px #000000;
+    ">
+        
+        <div style="
+        display: inline-block;
+        position: absolute;
+        top : 150px;
+        left: 10%; 
+        width: 80%;
+        height: 100px;
+        color: #555;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        ">
+        <?php echo $row['cat_name']; ?>
+
+        <div class="title" style="margin-top: 5px;"></div>
+
+    </div>
+
+
+
+    </div>
+
+
+<?php
+
+    }
+}
+?>
 
 
 
@@ -610,6 +698,8 @@ function getAdminProducts() {
 
 
 <?php
+
+
 
     }
 }

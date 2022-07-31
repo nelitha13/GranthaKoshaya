@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Authors - GranthaKoshaya</title>
+    <title>Categories - GranthaKoshaya</title>
     <link rel="stylesheet" href="style.css" />
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
@@ -28,16 +28,16 @@
         <?php include_once("src/functions.php");?>
 
         <div class="small-container">
-            <h1 class="title">Authors 
+            <h1 class="title">Categories 
                     <?php if($_SESSION['is_admin']) { ?>
-                    <span title="Add New Author"><a href="authors-add.php"><img src="images/add.png" alt="add" width="30px" height="30px"></a></span>
+                    <span title="Add New Category"><a href="categories-add.php"><img src="images/add.png" alt="add" width="30px" height="30px"></a></span>
                     <?php } ?>
             </h1>
 
 
         </div>
         <div style="width: 80%; display: inline; text-align: center;">
-            <?php getAuthorDetails(); ?>
+            <?php getCategories(); ?>
         </div>
             
 

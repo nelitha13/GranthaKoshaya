@@ -44,7 +44,7 @@
     <div class="small-container">
         <div class="row row-2">
             <h2>Related Books</h2>
-            <p>View More</p>
+            <a href="products.php">View More</a>
         </div>
     </div>
 

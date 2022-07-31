@@ -35,6 +35,8 @@
         <?php include_once("src/functions.php");?>
     </div>
 
+    <h1 class="title">My Cart</h1>
+
     <!-- Cart Items Details -->
     <div class="small-container cart-page">
         <table>
@@ -55,9 +57,8 @@
                     <td>Rs.<span id="totalValueTag"></span></td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td><td><a onclick="history.back()" class="btn">Go Back</a></td></td>
                     <td><span href="" id="payment" class="btn">Request Order</span></td>
-
                 </tr>
             </table>
         </div>

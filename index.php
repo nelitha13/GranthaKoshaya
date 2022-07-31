@@ -35,7 +35,7 @@
                     <a href="products.php" class="btn">Explore Now &#8594;</a>
                 </div>
                 <div class="col-2">
-                    <img src="images/image0 (2).jpeg" alt="" />
+                    <img src="./images/cover.png" alt="cover" />
                 </div>
             </div>
         </div>
@@ -90,6 +90,7 @@
 
 
     <!------ Testimonial  ------>
+<h1 class="title">What People Think!</h1> 
 <a href="aboutus.php">
     <div class="testimonial">
         <div class="small-container">
