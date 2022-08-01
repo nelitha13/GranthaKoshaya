@@ -570,7 +570,7 @@ function getCategories() {
     while($row = mysqli_fetch_assoc($result)){
 ?>
 
-
+<a href="category-details.php?category=<?php echo $row['cat_name']; ?>">
     <div style="
     border:1px solid;
     margin: 15px;
@@ -606,7 +606,7 @@ function getCategories() {
 
 
     </div>
-
+</a>
 
 <?php
 

@@ -1,7 +1,7 @@
 <?php session_start();
-    if(!isset($_REQUEST['id'])){
-        header('location: products.php');
-    }
+    //if(!isset($_REQUEST['id'])){
+        //header('location: products.php');
+    //}
 
 
 ?>
@@ -36,8 +36,11 @@
     <!-- Single Book Detail -->
     <div class="small-container single-product">
 
-        <?php getProductById($_REQUEST['id']); ?>
-
+        <?php if(isset($_GET['productid']))
+                getProductById($_GET['productid']);
+            else
+                getProductById($_REQUEST['id']);
+            ?>
     </div>
 
     <!-- Title -->
@@ -52,7 +55,11 @@
 
     <div class="small-container">
         <div class="row">
-            <?php getRelatedProducts($_REQUEST['id']); ?>
+        <?php if(isset($_GET['productid']))
+                getRelatedProducts($_GET['productid']);
+            else
+            getRelatedProducts($_REQUEST['id']);
+            ?>
         </div>
     </div>
 

@@ -29,10 +29,39 @@
 
     </div>
 
-        <!-- Single Category Detail -->
-        <div class="small-container single-product">
-        <?php getProductById($_REQUEST['id']); ?>
-        </div>
+<div class="title"><h1><?php echo $_GET['category'];?></h1></div>
+
+
+<?php
+
+global $db;
+
+$query = "SELECT p.id,p.img,p.name,p.stars,p.price FROM category c,product p where c.cat_id=p.cat_id AND c.cat_name='".$_GET['category']."'";
+$result = mysqli_query($db,$query);
+
+while($row = mysqli_fetch_assoc($result)){
+    $back_path = explode("images",$row["img"]);
+    $pid=$row["id"];
+    echo'
+    <div class="col-4">
+    <a href="product-details.php?productid='.$pid.'">
+        <img src="images' . $back_path[1].'" alt="image" style="
+                height:320px;
+                object-fit: cover;
+                " />
+    </a>
+    <h4>'.$row['name'].'</h4>
+    <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+    </div>
+    <p>Rs.'.$row['price'].'</p>
+</div>';
+}?>
+
 
 
 
