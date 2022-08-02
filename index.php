@@ -40,7 +40,7 @@
             </div>
         </div>
     </div>
-    <!----- Featurd Categories--------->
+    <!----- Featurd imgs--------->
     <div class="categories">
         <div class="small-container">
             <div class="row">
@@ -84,7 +84,19 @@
         <h1 class="title">Authors</h1>
         <div class="row">
 
-            <?php getMostFamousProducts() ?>
+            <?php getMostFamousAuthor() ?>
+            <a href="authors.php" class="btn">View All Authors <i class="fa fa-arrow-right"></i></a>
+    </div>
+
+
+        <!---------categories--------->
+
+        <div class="small-container">
+        <h1 class="title">Categories</h1>
+        <div class="row">
+
+            <?php getMostFamousCategory() ?>
+            <a href="categories.php" class="btn">View All Categories <i class="fa fa-arrow-right"></i></a>
 
     </div>
 

@@ -135,7 +135,7 @@
                     <form class="form" action="mail/mail.php" method="post">
 
                         <h1>Contact Us!</h1>
-                        <p>Say Hello! Or whatever you want!</p>
+                        <p>Say Hello! or Request New Books</p>
                         <div id="logo" class="icon-ic-drafts-24px"></div>
                         <input name="name" type="text" placeholder="Name" id="name" required />
 

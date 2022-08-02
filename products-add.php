@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Author - GranthaKoshaya</title>
+    <title>Add New Book - GranthaKoshaya</title>
     <link rel="stylesheet" href="style.css" />
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
@@ -26,67 +26,20 @@
     </div>
     <div class="container">
         <?php include_once("src/functions.php");?>
+       
+
+
+
+
+
+
+
+
+
+
+
 
     </div>
-
-
-    <div class="title"><h1><?php echo $_GET['author'];?></h1></div>
-
-
-<?php
-
-global $db;
-
-$query = "SELECT p.id,p.img,p.name,p.stars,p.price FROM author c,product p where c.Author_ID=p.Author_ID AND c.Author='".$_GET['author']."'";
-$result = mysqli_query($db,$query);
-
-while($row = mysqli_fetch_assoc($result)){
-    $back_path = explode("images",$row["img"]);
-    $pid=$row["id"];
-    echo'
-    <div class="row">
-    <div class="col-4">
-    <a href="product-details.php?productid='.$pid.'">
-        <img src="images' . $back_path[1].'" alt="image" style="
-                height:320px;a
-                object-fit: cover;
-                "/>
-    </a>
-    <h4>'.$row['name'].'</h4>
-    <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-    </div>
-    <p>Rs.'.$row['price'].'</p>
-    </div>
-</div>';
-}?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- Footer -->
     <div style="height:300px !important;"></div>
     <?php include_once("components/footer.php");?>

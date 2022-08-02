@@ -239,14 +239,15 @@ function getProductById($id) {
        
         <input type="number" value="0" id="addtocart_qty" max="<?php echo $stock ?>" min="0" />
         <span><a href="cart.php" id="addtocart_btn" class="btn">Add to Cart</a></span>
-        <a href="" target="_blank" class="btn">Read Book (Free)</a>
+        <a href="ebook-view.php" target="_blank" class="btn">Read Book (Free) <i class="fa-regular fa-arrow-up-right-from-square"></i></a>
       
         <?php 
                 }
             } 
         }
         ?>
-
+        <span><a href="account.php" class="btn">Add to Cart</a></span>
+        <a href="account.php" class="btn">Read Book (Free) <i class="fa-regular fa-arrow-up-right-from-square"></i></a>
 
         <h4>Rs.<?php echo $row["price"]; ?></h4>
         <h3>Product Details<i class="fa fa-indent"></i></h3>
@@ -511,7 +512,7 @@ function getAuthorDetails() {
     
     while($row = mysqli_fetch_assoc($result)){
 ?>
-
+    <a href="author-details.php?author=<?php echo $row['Author']; ?>">
 
     <div style="
     border:1px solid;
@@ -607,6 +608,96 @@ function getCategories() {
 
     </div>
 </a>
+
+<?php
+
+    }
+}
+?>
+
+
+<!-- Get Famous Author -->
+<?php 
+
+function getMostFamousAuthor() {
+
+   global $db;
+
+    $query = "SELECT *,SUM(qty),product_id FROM customer_product JOIN product on product.id =customer_product.product_id   GROUP BY product_id ORDER BY SUM(qty) DESC LIMIT 12";
+    $result = mysqli_query($db,$query);
+
+    while($row = mysqli_fetch_assoc($result)){
+      
+        $back_path = explode("images",$row["img"]);
+?>
+
+
+<div class="col-4">
+
+    <a href="product-details.php?id=<?php echo $row["id"]; ?>">
+        <img src="<?php echo "images" . $back_path[1] ?>" alt="image" style="
+                height:320px;
+                object-fit: cover;
+                " />
+    </a>
+
+    <h4><?php echo $row["name"]; ?></h4>
+    <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+    </div>
+    <p>Rs.<?php echo $row["price"]; ?></p>
+    <p>Total sales : <?php echo $row["SUM(qty)"]; ?></p>
+</div>
+
+
+<?php
+
+    }
+}
+?>
+
+
+<!-- Get Famous Category -->
+<?php 
+
+function getMostFamousCategory() {
+
+   global $db;
+
+    $query = "SELECT *,SUM(qty),product_id FROM customer_product JOIN product on product.id =customer_product.product_id   GROUP BY product_id ORDER BY SUM(qty) DESC LIMIT 12";
+    $result = mysqli_query($db,$query);
+
+    while($row = mysqli_fetch_assoc($result)){
+      
+        $back_path = explode("images",$row["img"]);
+?>
+
+
+<div class="col-4">
+
+    <a href="product-details.php?id=<?php echo $row["id"]; ?>">
+        <img src="<?php echo "images" . $back_path[1] ?>" alt="image" style="
+                height:320px;
+                object-fit: cover;
+                " />
+    </a>
+
+    <h4><?php echo $row["name"]; ?></h4>
+    <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+    </div>
+    <p>Rs.<?php echo $row["price"]; ?></p>
+    <p>Total sales : <?php echo $row["SUM(qty)"]; ?></p>
+</div>
+
 
 <?php
 

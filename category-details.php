@@ -43,12 +43,13 @@ while($row = mysqli_fetch_assoc($result)){
     $back_path = explode("images",$row["img"]);
     $pid=$row["id"];
     echo'
+    <div class="row">
     <div class="col-4">
     <a href="product-details.php?productid='.$pid.'">
         <img src="images' . $back_path[1].'" alt="image" style="
                 height:320px;
                 object-fit: cover;
-                " />
+                "/>
     </a>
     <h4>'.$row['name'].'</h4>
     <div class="rating">
@@ -59,6 +60,7 @@ while($row = mysqli_fetch_assoc($result)){
         <i class="fa fa-star-o"></i>
     </div>
     <p>Rs.'.$row['price'].'</p>
+    </div>
 </div>';
 }?>
 

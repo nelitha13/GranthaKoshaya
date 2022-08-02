@@ -41,14 +41,13 @@
                     <span onclick="register()">Register</span>
                     <hr id="indicator" />
                 </div>
-
                 <form action="src/server.php" id="LoginForm" method="post">
 
                     <input type="email" placeholder="Email" name="email" />
                     <input type="password" placeholder="Password" name="password" />
 
                     <input type="submit" class="btn" name="user_login" value="Login">
-                    <a href="">Forgot Password</a>
+                    <a href="">Forgot Password</a><br><br>
 
                 </form>
 
