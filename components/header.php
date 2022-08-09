@@ -6,109 +6,109 @@ include_once('src/conn.php');
     crossorigin="anonymous"></script>
 
 <style>
-@keyframes example {
-    from {
-        margin: 0% auto;
+    @keyframes example {
+        from {
+            margin: 0% auto;
+        }
+
+        to {
+            margin: 5% auto;
+        }
     }
 
-    to {
+    .add_product {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .add_product_input {
+        background-color: #ffe7e7;
+        width: 100%;
+        height: 30px;
+        margin-top: 30px;
+        border-radius: 4px;
+        border: none;
+        border-bottom: 1px solid black;
+
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+
+    .modal-content {
+        border-radius: 10px;
+        background-color: #ffe7e7 !important;
         margin: 5% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 40%;
+
+        animation-name: example;
+        animation-duration: 0.5s;
     }
-}
 
-.add_product {
-    width: 50%;
-    margin: 0 auto;
-}
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
 
-.add_product_input {
-    background-color: #ffe7e7;
-    width: 100%;
-    height: 30px;
-    margin-top: 30px;
-    border-radius: 4px;
-    border: none;
-    border-bottom: 1px solid black;
-
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-
-.modal-content {
-    border-radius: 10px;
-    background-color: #ffe7e7 !important;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 40%;
-
-    animation-name: example;
-    animation-duration: 0.5s;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
 
 
 
 
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
 
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 </style>
 <div class="navbar">
     <div class="logo">
         <a href="index.php">
-            <img src="images/Logo.png" alt="" width="150px" /></a>
+            <img src="images\GranthakosyaTrans.png" alt="" width="200px" /></a>
     </div>
     <nav>
         <form method="post" action="src/server.php">
@@ -127,7 +127,13 @@ include_once('src/conn.php');
             <?php if($_SESSION['is_admin']) { ?>
 
             <li><a href="adminproducts.php">My Books</a></li>
-            <li id="myBtn"><img src="images/add.png" alt="" width="30px" height="30px" /></li>
+
+            <span title="Admin"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-award" viewBox="0 0 16 16">
+                    <path
+                        d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68L9.669.864zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702 1.509.229z" />
+                    <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z" />
+                </svg></span>
 
             <?php } ?>
 
@@ -135,6 +141,13 @@ include_once('src/conn.php');
 
             <?php  } else { ?>
 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus"
+                viewBox="0 0 16 16">
+                <path
+                    d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                <path fill-rule="evenodd"
+                    d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+            </svg>
             <li><a href="account.php">Login/Register</a></li>
 
             <?php  } ?>
@@ -148,7 +161,8 @@ include_once('src/conn.php');
 
         <?php if (!$_SESSION['is_admin']) { ?>
 
-        <span title="My Cart"><a href="cart.php"><img src="images/cart.png" alt="" width="30px" height="30px" /></a></span>
+        <span title="My Cart"><a href="cart.php"><img src="images/cart.png" alt="" width="30px"
+                    height="30px" /></a></span>
 
         <?php } ?>
 
@@ -172,107 +186,6 @@ include_once('src/conn.php');
     <div class="modal-content">
         <span class="close">&times;</span>
 
-        <form id="form" class="add_product" method="post" enctype="multipart/form-data">
-        <div class="small-container">
-        <h2 class="title">ADD BOOKS</h2>
-
-    </div>
-            <input type="text" class="add_product_input" name="name" placeholder="Name" id="add_product_name_id" /><br>
-            <input type="text" class="add_product_input" name="description" placeholder="Description"
-                id="add_product_description_id" /><br>
-            <select class="add_product_input" name="category" id="add_product_category_id">
-                <option value="Innovation">Innovation</option>
-                <option value="Crafts">Crafts</option>
-
-            </select>
-            <input type="number" min="1" class="add_product_input" name="price" placeholder="Price"
-                id="add_product_price_id" /><br>
-            <input type="number" min="0" class="add_product_input" name="offer" placeholder="Offer"
-                id="add_product_offer_id" /><br>
-            <input type="number" min="1" class="add_product_input" name="iqty" placeholder="Initial Quantity"
-                id="add_product_iqty_id" /><br>
-            <input type="file" class="add_product_input" name="image" placeholder="Image" id="add_product_img_id" /><br>
-            <input type="file" class="add_product_input" name="PDF" placeholder="PDF File" id="add_product_img_id" /><br>
-            <input type="text" hidden name="product_add" value="set" /><br>
-            <input type="submit" name="product_add" style="
-                width:100%;
-                margin-top:20px;
-                background-color:#04aa6d;
-                height:50px;
-                border-radius:10px;
-                color:white;
-                font-weight: bold;
-                font-size: 20px;
-            " value="ADD" />
-        </form>
     </div>
 
 </div>
-
-
-<script>
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-span.onclick = function() {
-    modal.style.display = "none";
-}
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-<script>
-$(document).ready(function() {
-
-    $("#form").on('submit', (function(e) {
-        e.preventDefault();
-
-        let name = $('#add_product_name_id')[0].value;
-        let description = $('#add_product_description_id')[0].value;
-        let category = $('#add_product_category_id')[0].value;
-        let price = $('#add_product_price_id')[0].value;
-        let offer = $('#add_product_offer_id')[0].value;
-        let iqty = $('#add_product_iqty_id')[0].value;
-        let img = $('#add_product_img_id')[0].files;
-
-        // Check file selected or not
-        if (
-            name != "" &&
-            description != "" &&
-            category != "" &&
-            price != "" &&
-            offer != "" &&
-            iqty != "" &&
-            img.length > 0
-        ) {
-
-            $.ajax({
-                url: 'src/server.php',
-                type: 'POST',
-                data: new FormData(this),
-                contentType: false,
-                processData: false,
-                success: function(response) {
-                    if (response != 0) {
-                        alert(response);
-                        $("#form")[0].reset();
-                    } else {
-                        alert('file not uploaded');
-                        $("#form")[0].reset();
-                    }
-                },
-            });
-        } else {
-            alert("Please Fill all the Fields");
-        }
-    }));
-
-});
-</script>

@@ -121,49 +121,6 @@
 
 	}
 
-	if (isset($_POST['product_add'])) 
-	{
-		$valid_extensions = array('jpeg', 'jpg', 'png', 'gif', 'bmp' , 'pdf' , 'doc' , 'ppt'); // valid extensions
-		$path = '../images/product/'; 
-
-		$img = $_FILES['image']['name'];
-		$tmp = $_FILES['image']['tmp_name'];
-
-		$ext = strtolower(pathinfo($img, PATHINFO_EXTENSION));
-
-		$final_image = rand(1000,1000000).$img;
-	
-		if(in_array($ext, $valid_extensions)) 
-		{ 
-			$path = $path.strtolower($final_image); 
-			
-			if(move_uploaded_file($tmp,$path)) 
-			{
-				
-
-				$name = $_POST['name'];
-				$description = $_POST['description'];
-				$category = $_POST['category'];
-				$price = $_POST['price'];
-				$offer = $_POST['offer'];
-				$iqty = $_POST['iqty'];
-				
-				$company_id = $_SESSION['id'];
-		
-				$query = "INSERT into product (name,description,category,stars,price,offer,iqty,company_id,img) VALUES ('".$name."','".$description."','".$category."','0','".$price."','".$offer."','".$iqty."','".$company_id."','".$path."')";
-				
-				mysqli_query($db, $query);
-				echo "Uploaded";
-			
-			}
-		} 
-		else 
-		{
-			echo 'invalid';
-		}
-
-
-	}
 
 
 
@@ -239,19 +196,6 @@
 	}
 
 
-// //---------------------------------------------------------------------------------------------
-
-//   if(isset($_POST['oid']))
-//   {
-//     $oid = $_POST['oid'];
-//     $q = "DELETE FROM orders WHERE oid = $oid";
-
-//     if (mysqli_query($db,$q)) {
-
-//         	echo "Item Deleted Sucsessfully!!";
-//         }    
-
-//   }
 
 if(isset($_POST['payment']))
 {
@@ -279,5 +223,106 @@ if(isset($_POST['payment']))
 
 }
 
+if (isset($_POST['create-category'])){
+
+		$category=$_POST['category'];
+		$file = $_FILES['image']['name'];
+		$file_loc = $_FILES['image']['tmp_name'];
+		$folder = "../images/category images/";
+		$new_file_name = strtolower($file);
+		$final_file = str_replace(' ', '-', $new_file_name);
+		$final_file = rand() . "-" . $final_file; //add impure
+		if(move_uploaded_file($file_loc, $folder . $final_file)) {
+			$image = $final_file;
+			$query = "insert into category(cat_name,cat_img) values ('".$category."', '".$image."')";
+			$results=mysqli_query($db,$query);
+			if($results){
+				header('Location: ../categories.php');
+				$_SESSION['message']='Category Created Successfully';
+			}
+			else{
+				header('Location: ../categories.php');
+				$_SESSION['message']=mysqli_error($db);
+			}
+		}
+		else{
+			header('Location: ../categories.php');
+		}
+	
+}
+
+
+if (isset($_POST['add-author'])){
+
+	$author=$_POST['author'];
+	$file = $_FILES['image']['name'];
+	$file_loc = $_FILES['image']['tmp_name'];
+	$folder = "../images/author images/";
+	$new_file_name = strtolower($file);
+	$final_file = str_replace(' ', '-', $new_file_name);
+	$final_file = rand() . "-" . $final_file; //add impure
+	if(move_uploaded_file($file_loc, $folder . $final_file)) {
+		$image = $final_file;
+		$query = "insert into author(Author,author_img) values ('".$author."', '".$image."')";
+		$results=mysqli_query($db,$query);
+		if($results){
+			header('Location: ../authors.php');
+			$_SESSION['message']='Author Added Successfully';
+		}
+		else{
+			header('Location: ../authors.php');
+			$_SESSION['message']=mysqli_error($db);
+		}
+	}
+	else{
+		header('Location: ../authors.php');
+	}
+
+}
+
+
+
+if (isset($_POST['add-product'])){
+
+	$name=$_POST['name'];
+	$description=$_POST['description'];
+	$category=json_decode(($_POST['category']),true);
+	$author=json_decode(($_POST['author']),true);
+	$price=$_POST['price'];
+	$iqty=$_POST['iqty'];
+	$file = $_FILES['image']['name'];
+	$file_loc = $_FILES['image']['tmp_name'];
+	$folder = "../images/product/";
+	$new_file_name = strtolower($file);
+	$final_file = str_replace(' ', '-', $new_file_name);
+	$final_file = rand() . "-" . $final_file; //add impure
+
+	$file_pdf = $_FILES['pdf']['name'];
+	$file_loc_pdf = $_FILES['pdf']['tmp_name'];
+	$folder_pdf = "../ebooks/";
+	$new_file_name_pdf = strtolower($file_pdf);
+	$final_file_pdf = str_replace(' ', '-', $new_file_name_pdf);
+	$final_file_pdf = rand() . "-" . $final_file_pdf; //add impure
+
+	if(move_uploaded_file($file_loc, $folder . $final_file) && move_uploaded_file($file_loc_pdf, $folder_pdf . $final_file_pdf)) {
+		$image =$folder. $final_file;
+		$pdf =$folder_pdf. $final_file_pdf;
+		$query = "insert into product(name,description,category,cat_id,Author,Author_ID,price,iqty,company_id,img,ebook) values ('".$name."', '".$description."', '".$category["name"]."', '".$category["id"]."', '".$author["name"]."', '".$author["id"]."', '".$price."', '".$iqty."', '".$_SESSION['id']."', '".$image."', '".$pdf."')";
+		$results=mysqli_query($db,$query);
+		if($results){
+			header('Location: ../adminproducts.php');
+			$_SESSION['message']='Product Added Successfully';
+		}
+		else{
+			header('Location: ../adminproducts.php');
+			$_SESSION['message']=mysqli_error($db);
+		}
+	}
+	else{
+		header('Location: ../adminproducts.php');
+		$_SESSION['message']='File Upload Failed';
+	}
+
+}
 
 ?>

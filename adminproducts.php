@@ -7,7 +7,10 @@
     }else{
         header('location: index.php');
     }
-    
+    if(isset($_SESSION['message'])){
+        echo('<script>alert("'.$_SESSION['message'].'")</script>');
+        unset($_SESSION['message']);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,52 +25,52 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://kit.fontawesome.com/2676e383a1.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/x-icon" href="images\Logo.png">
+    <link rel="icon" type="image/x-icon" href="images\icon.png">
     <style>
-    .fa-trash-alt {
-        font-size: 20px;
-        color: #d54e4a;
-    }
+        .fa-trash-alt {
+            font-size: 20px;
+            color: #d54e4a;
+        }
 
-    .fa-shipping-fast {
-        font-size: 30px;
-        color: #d54e4a;
-    }
+        .fa-shipping-fast {
+            font-size: 30px;
+            color: #d54e4a;
+        }
 
-    .fa-save {
-        font-size: 20px;
-        color: #56af55;
-    }
+        .fa-save {
+            font-size: 20px;
+            color: #56af55;
+        }
 
-    .fa-edit {
-        font-size: 20px;
-        color: #ec9923;
-    }
+        .fa-edit {
+            font-size: 20px;
+            color: #ec9923;
+        }
 
-    .fa-trash-alt:hover {
-        font-size: 25px;
-    }
+        .fa-trash-alt:hover {
+            font-size: 25px;
+        }
 
-    .fa-shipping-fast:hover {
-        font-size: 35px;
-    }
+        .fa-shipping-fast:hover {
+            font-size: 35px;
+        }
 
-    .fa-save:hover {
-        font-size: 25px;
-    }
+        .fa-save:hover {
+            font-size: 25px;
+        }
 
-    .fa-edit:hover {
-        font-size: 25px;
-    }
+        .fa-edit:hover {
+            font-size: 25px;
+        }
 
-    .pendingorder {
-        background-color: #f9e3e3;
-    }
+        .pendingorder {
+            background-color: #f9e3e3;
+        }
 
-    .outofstock * {
-        background-color: #d54e4a;
-        color: #f9e3e3;
-    }
+        .outofstock * {
+            background-color: #d54e4a;
+            color: #f9e3e3;
+        }
     </style>
 </head>
 
@@ -84,48 +87,50 @@
     </div>
 
     <div class="small-container">
-            <h1 class="title">My Books 
-                    <?php if($_SESSION['is_admin']) { ?>
-                        <id="myBtn"><img src="images/add.png" alt="" width="30px" height="30px" />
-                    <?php } ?>
-            </h1>
+        <h1 class="title">My Books
+            <?php if($_SESSION['is_admin']) { ?>
+            <a href="products-add.php">
+                <id="myBtn"><img src="images/add.png" alt="" width="30px" height="30px" />
+            </a>
+            <?php } ?>
+        </h1>
 
-    <!-- Cart Items Details -->
-    <div class="small-container cart-page">
-        <table>
-            <tr>
-                <th>Product</i></th>
-                <th>Category</th>
-                <th>Available QTY</th>
-                <th>Pending Orders (QTY)</th>
-                <th>Total Sale (QTY)</th>
-                <th></th>
+        <!-- Cart Items Details -->
+        <div class="small-container cart-page">
+            <table>
+                <tr>
+                    <th>Product</i></th>
+                    <th>Category</th>
+                    <th>Available QTY</th>
+                    <th>Pending Orders (QTY)</th>
+                    <th>Total Sale (QTY)</th>
+                    <th></th>
 
-            </tr>
+                </tr>
 
-            <?php getAdminProducts() ?>
+                <?php getAdminProducts() ?>
 
-        </table>
+            </table>
 
-    </div>
-    <!-- Footer -->
-    <div style="height:500px !important;"></div>
-    <?php include_once("components/footer.php");?>
+        </div>
+        <!-- Footer -->
+        <div style="height:500px !important;"></div>
+        <?php include_once("components/footer.php");?>
 
-    <!-- JS for Toggle menu -->
-    <script>
-    var MenuItems = document.getElementById("MenuItems");
+        <!-- JS for Toggle menu -->
+        <script>
+            var MenuItems = document.getElementById("MenuItems");
 
-    MenuItems.style.maxHeight = "0px";
-
-    function menutoggle() {
-        if (MenuItems.style.maxHeight == "0px") {
-            MenuItems.style.maxHeight = "200px";
-        } else {
             MenuItems.style.maxHeight = "0px";
-        }
-    }
-    </script>
+
+            function menutoggle() {
+                if (MenuItems.style.maxHeight == "0px") {
+                    MenuItems.style.maxHeight = "200px";
+                } else {
+                    MenuItems.style.maxHeight = "0px";
+                }
+            }
+        </script>
 </body>
 
 </html>
@@ -135,131 +140,130 @@
 
 
 <script>
-$(document).ready(function() {
+    $(document).ready(function () {
 
-    let current_edititem_value = 0;
-    let final_edititem_value = 0;
+        let current_edititem_value = 0;
+        let final_edititem_value = 0;
 
-    function calculateTotal() {
-        let total = 0;
-        var inputs = $(".subtotals");
+        function calculateTotal() {
+            let total = 0;
+            var inputs = $(".subtotals");
 
-        for (var i = 0; i < inputs.length; i++) {
-            total += parseFloat(inputs[i].innerHTML);
+            for (var i = 0; i < inputs.length; i++) {
+                total += parseFloat(inputs[i].innerHTML);
+            }
+
+            $("#totalValueTag").html(total);
+
         }
 
-        $("#totalValueTag").html(total);
-
-    }
-
-    calculateTotal();
+        calculateTotal();
 
 
-    $(".removeitem_btn").click(function(e) {
+        $(".removeitem_btn").click(function (e) {
 
-        let pid = e.target.attributes.id.value;
+            let pid = e.target.attributes.id.value;
 
-        var formData = new FormData();
+            var formData = new FormData();
 
-        formData.append('removeitem_btn', 'set');
-        formData.append('pid', pid);
+            formData.append('removeitem_btn', 'set');
+            formData.append('pid', pid);
 
-        $.ajax({
-            url: 'src/server.php',
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function(response) {
-                if (response != 0) {
-                    alert(response);
-                    location.reload();
-                } else {
-                    alert('Error on deleting');
-                    location.reload();
-                }
-            },
+            $.ajax({
+                url: 'src/server.php',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response != 0) {
+                        alert(response);
+                        location.reload();
+                    } else {
+                        alert('Error on deleting');
+                        location.reload();
+                    }
+                },
+            });
+
         });
 
-    });
+        $(".shiporder_btn").click(function (e) {
 
-    $(".shiporder_btn").click(function(e) {
+            let pid = e.target.attributes.id.value;
 
-        let pid = e.target.attributes.id.value;
+            var formData = new FormData();
 
-        var formData = new FormData();
+            formData.append('shiporder_btn', 'set');
+            formData.append('pid', pid);
 
-        formData.append('shiporder_btn', 'set');
-        formData.append('pid', pid);
+            $.ajax({
+                url: 'src/server.php',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response != 0) {
+                        alert(response);
+                        location.reload();
+                    } else {
+                        alert('Error on deleting');
+                        location.reload();
+                    }
+                },
+            });
 
-        $.ajax({
-            url: 'src/server.php',
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function(response) {
-                if (response != 0) {
-                    alert(response);
-                    location.reload();
-                } else {
-                    alert('Error on deleting');
-                    location.reload();
-                }
-            },
         });
 
-    });
+        $(".edititem_btn").click(function (e) {
 
-    $(".edititem_btn").click(function(e) {
+            let pid = e.target.attributes.id.value;
 
-        let pid = e.target.attributes.id.value;
+            $("#edititem_value" + pid).prop("disabled", false);
+            $(".edititem_btn" + pid).hide();
+            $(".saveitem_btn" + pid).parent().show();
 
-        $("#edititem_value" + pid).prop("disabled", false);
-        $(".edititem_btn" + pid).hide();
-        $(".saveitem_btn" + pid).parent().show();
+            current_edititem_value = $("#edititem_value" + pid).val();
+        });
 
-        current_edititem_value = $("#edititem_value" + pid).val();
-    });
+        $(".saveitem_btn").click(function (e) {
 
-    $(".saveitem_btn").click(function(e) {
+            let pid = e.target.attributes.id.value;
 
-        let pid = e.target.attributes.id.value;
+            $("#edititem_value" + pid).prop("disabled", true);
+            $(".saveitem_btn" + pid).parent().hide();
+            $(".edititem_btn" + pid).show();
 
-        $("#edititem_value" + pid).prop("disabled", true);
-        $(".saveitem_btn" + pid).parent().hide();
-        $(".edititem_btn" + pid).show();
+            final_edititem_value = $("#edititem_value" + pid).val();
+            let dif = final_edititem_value - current_edititem_value;
 
-        final_edititem_value = $("#edititem_value" + pid).val();
-        let dif = final_edititem_value - current_edititem_value;
+            var formData = new FormData();
+            formData.append('saveitem_btn', 'set');
+            formData.append('pid', pid);
+            formData.append('dif', dif);
 
-        var formData = new FormData();
-        formData.append('saveitem_btn', 'set');
-        formData.append('pid', pid);
-        formData.append('dif', dif);
+            $.ajax({
+                url: 'src/server.php',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response != 0) {
+                        alert(response);
+                        location.reload();
+                    } else {
+                        alert('Error on deleting');
+                        location.reload();
+                    }
+                },
+            });
 
-        $.ajax({
-            url: 'src/server.php',
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function(response) {
-                if (response != 0) {
-                    alert(response);
-                    location.reload();
-                } else {
-                    alert('Error on deleting');
-                    location.reload();
-                }
-            },
+
         });
 
 
+
     });
-
-
-
-});
-
 </script>
