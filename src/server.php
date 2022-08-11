@@ -11,6 +11,9 @@
 	//---------------------------------------------------------------------------------------------
 
 	if (isset($_GET['logout'])) {
+		unset($_SESSION['is_admin']);
+		unset($_SESSION['id']);
+		unset($_SESSION['name']);
 		unset($_SESSION['user_email']);
 		unset($_GET['logout']);
 		header('location:../index.php');
@@ -266,12 +269,12 @@ if (isset($_POST['add-author'])){
 		$query = "insert into author(Author,author_img) values ('".$author."', '".$image."')";
 		$results=mysqli_query($db,$query);
 		if($results){
-			header('Location: ../authors.php');
 			$_SESSION['message']='Author Added Successfully';
+			header('Location: ../authors.php');
 		}
 		else{
-			header('Location: ../authors.php');
 			$_SESSION['message']=mysqli_error($db);
+			header('Location: ../authors.php');
 		}
 	}
 	else{
@@ -310,19 +313,34 @@ if (isset($_POST['add-product'])){
 		$query = "insert into product(name,description,category,cat_id,Author,Author_ID,price,iqty,company_id,img,ebook) values ('".$name."', '".$description."', '".$category["name"]."', '".$category["id"]."', '".$author["name"]."', '".$author["id"]."', '".$price."', '".$iqty."', '".$_SESSION['id']."', '".$image."', '".$pdf."')";
 		$results=mysqli_query($db,$query);
 		if($results){
-			header('Location: ../adminproducts.php');
 			$_SESSION['message']='Product Added Successfully';
+			header('Location: ../adminproducts.php');
 		}
 		else{
-			header('Location: ../adminproducts.php');
 			$_SESSION['message']=mysqli_error($db);
+			header('Location: ../adminproducts.php');
 		}
 	}
 	else{
-		header('Location: ../adminproducts.php');
 		$_SESSION['message']='File Upload Failed';
+		header('Location: ../adminproducts.php');
 	}
 
+}
+
+if(isset($_POST['add-feedback'])){
+	$customer=$_POST['customer'];
+	$feedback=$_POST['feedback'];
+	$rating=$_POST['rating'];
+	$query="insert into feedbacks(name, feedback, rating) values('".$customer."', '".$feedback."', '".$rating."')";
+	if(mysqli_query($db,$query)){
+		$_SESSION['message']='Feedback added successfully';
+		header('location: ../index.php');
+	}
+	else{
+		$_SESSION['message']='Feedback added failed';
+		header('location: ../index.php');
+	}
 }
 
 ?>

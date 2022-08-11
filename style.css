@@ -163,6 +163,8 @@ p {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  padding-bottom: 0%;
+  margin: 0px;
 }
 
 h4 {
@@ -197,29 +199,28 @@ small {
   color: #555;
 }
 
-/* -----
-nial----- */
+/* -----feedbacks----- */
 
-.testimonial {
-  padding-top: 100px;
+.feedback {
+  padding-top: 0px;
 }
 
-.testimonial .col-3 {
+.feedback .col-3 {
   text-align: center;
   padding: 40px 20px;
   box-shadow: 0 0 20px 0px rgba(250, 250, 250, 0.1);
   cursor: pointer;
   transition: transform 0.5s;
+  border: #050505;
+  border-style: inset;
+  border-radius: 25px;
+  height: max-content;
 }
 
-.testimonial .col-3 img {
+.feedback .col-3 img {
   width: 50px;
   margin-top: 20px;
   border-radius: 50%;
-}
-
-.testimonial .col-3:hover {
-  transform: translateY(-10px);
 }
 
 .fa.fa-quote-left {
@@ -233,7 +234,7 @@ nial----- */
   color: #777;
 }
 
-.testimonial .col-3 h3 {
+.feedback .col-3 h3 {
   font-weight: 600;
   color: #555;
   font-size: 16px;
@@ -629,4 +630,23 @@ form a {
   margin-top: 8px;
   transform: translateX(100px);
   transition: transform 1s;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body { font-family: sans-serif; }
+
+.gallery {
+  background: transparent;
+  display: block;
+}
+
+.gallery-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: none;
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2022 at 03:08 PM
+-- Generation Time: Aug 11, 2022 at 05:44 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -146,6 +146,30 @@ INSERT INTO `customer_product` (`customer_id`, `product_id`, `qty`, `bill_date`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `feedbacks`
+--
+
+CREATE TABLE `feedbacks` (
+  `feedback_id` int(11) NOT NULL,
+  `name` text DEFAULT NULL,
+  `feedback` text DEFAULT NULL,
+  `rating` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `feedbacks`
+--
+
+INSERT INTO `feedbacks` (`feedback_id`, `name`, `feedback`, `rating`) VALUES
+(1, 'Nelitha Vindinu Priyawansha', 'test', '4'),
+(2, 'Nelitha Priyawansha', 'test', '5'),
+(3, 'Freedom Library', 'test 2', '3'),
+(4, 'Indraka Priyawansha', 'test 3', '2'),
+(5, 'name', 'test 4', '1');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product`
 --
 
@@ -171,16 +195,16 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `description`, `category`, `cat_id`, `Author`, `Author_ID`, `stars`, `price`, `offer`, `iqty`, `company_id`, `img`, `ebook`) VALUES
-(10, 'Jar Decos', 'A good friend is like a four leaf clover, hard to find and lucky to have. Surprise your bestie with a unique jar decos', 'crafts ', NULL, '1', 3, 0, 1000, 0, 8, 1, '../images/product/17201c15.jpeg', NULL),
-(12, 'Love light box', 'Valentine special. Unique gift for your loved ones .portable and light weight. USB powered. Bright full lights. Text can be customized. Automatic RGB colours (7 colours)', 'innovation', NULL, '2', NULL, 0, 600, 0, 12, 1, '../images/product/188775i4.jpeg', NULL),
-(13, 'Tassel Chandelier', 'Major part of luxury decorations that use to light and hang for the top of the beds. ', NULL, NULL, '1', NULL, 0, 2000, 0, 5, 1, '../images/product/243915c17.jpeg', NULL),
-(14, 'Greeting Cards', 'The simplest but the most cherished way to show your love for your loved ones. With the love and blessings of the nature .Made from 100% eco-friendly materials', NULL, NULL, '2', NULL, 0, 350, 0, 15, 1, '../images/product/960311c2.jpg', NULL),
-(15, 'Beach Jar', 'Decorated with various seashells', NULL, NULL, NULL, NULL, 0, 1500, 0, 11, 1, '../images/product/679324c5.png', NULL),
-(16, 'Dreams Catchers', 'Those who believe in dreamcatchers say that they act as a filter for dreams. They send good dreams for the sleeper and the bad dreams away. More special for lovely once and persons who care you.', NULL, NULL, NULL, NULL, 0, 1850, 0, 7, 1, '../images/product/828752c11.jpg', NULL),
-(17, 'Photo Collage', 'We will make a photo collage as you wish. Show your love to your homies with lovely memory collection and the beauty of the nature.', NULL, NULL, NULL, NULL, 0, 2500, 0, 4, 1, '../images/product/5006c1.jpeg', NULL),
-(19, 'Crystalights Panel ', 'Dimension of one Crystalights :-  🔘Length - 13cm 🔘Height - 1.5cm  Features :-  🔘Ultra bright colors 🔘Made by polystrene materials  🔘Remote controllable 🔘16 various colors 🔘04 color patterns (Strobe,shade,blink,smooth) 🔘Can work by 12V power supply 🔘Portable and lightweight  🔘 can control the light speed', NULL, NULL, NULL, NULL, 0, 4400, 0, 3, 1, '../images/product/456278i6.png', NULL),
-(20, 'PIXELS', 'Pixels are the most wonderful and mind relaxing smart product with millions of pixels with hundred of colors.', NULL, 1, NULL, NULL, 0, 3500, 0, 5, 1, '../images/product/671313i2.jpeg', NULL),
-(21, ' Crystalights panel ', 'Dimension of one Crystalights :-  🔘Length - 13cm 🔘Height - 1.5cm  Features :-  🔘Ultra bright colors 🔘Made by polystrene materials  🔘Remote controllable 🔘16 various colors 🔘04 color patterns (Strobe,shade,blink,smooth) 🔘Can work by 12V power supply 🔘Portable and lightweight  🔘 can controll the light speed', NULL, 1, NULL, NULL, 0, 3500, 0, 5, 1, '../images/product/352858i7.jpeg', NULL);
+(10, 'Jar Decos', 'A good friend is like a four leaf clover, hard to find and lucky to have. Surprise your bestie with a unique jar decos', 'crafts ', 1, '1', 3, 0, 1000, 0, 8, 1, '../images/product/17201c15.jpeg', NULL),
+(12, 'Love light box', 'Valentine special. Unique gift for your loved ones .portable and light weight. USB powered. Bright full lights. Text can be customized. Automatic RGB colours (7 colours)', 'innovation', 2, '2', 3, 0, 600, 0, 12, 1, '../images/product/188775i4.jpeg', NULL),
+(13, 'Tassel Chandelier', 'Major part of luxury decorations that use to light and hang for the top of the beds. ', NULL, 9, '1', 5, 0, 2000, 0, 5, 1, '../images/product/243915c17.jpeg', NULL),
+(14, 'Greeting Cards', 'The simplest but the most cherished way to show your love for your loved ones. With the love and blessings of the nature .Made from 100% eco-friendly materials', NULL, 1, '2', 4, 0, 350, 0, 15, 1, '../images/product/960311c2.jpg', NULL),
+(15, 'Beach Jar', 'Decorated with various seashells', NULL, 2, NULL, 6, 0, 1500, 0, 11, 1, '../images/product/679324c5.png', NULL),
+(16, 'Dreams Catchers', 'Those who believe in dreamcatchers say that they act as a filter for dreams. They send good dreams for the sleeper and the bad dreams away. More special for lovely once and persons who care you.', NULL, 9, NULL, 2, 0, 1850, 0, 7, 1, '../images/product/828752c11.jpg', NULL),
+(17, 'Photo Collage', 'We will make a photo collage as you wish. Show your love to your homies with lovely memory collection and the beauty of the nature.', NULL, 1, NULL, 6, 0, 2500, 0, 4, 1, '../images/product/5006c1.jpeg', NULL),
+(19, 'Crystalights Panel ', 'Dimension of one Crystalights :-  🔘Length - 13cm 🔘Height - 1.5cm  Features :-  🔘Ultra bright colors 🔘Made by polystrene materials  🔘Remote controllable 🔘16 various colors 🔘04 color patterns (Strobe,shade,blink,smooth) 🔘Can work by 12V power supply 🔘Portable and lightweight  🔘 can control the light speed', NULL, 1, NULL, 2, 0, 4400, 0, 3, 1, '../images/product/456278i6.png', NULL),
+(20, 'PIXELS', 'Pixels are the most wonderful and mind relaxing smart product with millions of pixels with hundred of colors.', NULL, 1, NULL, 4, 0, 3500, 0, 5, 1, '../images/product/671313i2.jpeg', NULL),
+(21, ' Crystalights panel ', 'Dimension of one Crystalights :-  🔘Length - 13cm 🔘Height - 1.5cm  Features :-  🔘Ultra bright colors 🔘Made by polystrene materials  🔘Remote controllable 🔘16 various colors 🔘04 color patterns (Strobe,shade,blink,smooth) 🔘Can work by 12V power supply 🔘Portable and lightweight  🔘 can controll the light speed', NULL, 1, NULL, 5, 0, 3500, 0, 5, 1, '../images/product/352858i7.jpeg', NULL);
 
 --
 -- Indexes for dumped tables
@@ -218,6 +242,12 @@ ALTER TABLE `customer_product`
   ADD KEY `product_id` (`product_id`);
 
 --
+-- Indexes for table `feedbacks`
+--
+ALTER TABLE `feedbacks`
+  ADD PRIMARY KEY (`feedback_id`);
+
+--
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
@@ -251,6 +281,12 @@ ALTER TABLE `company`
 --
 ALTER TABLE `customer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `feedbacks`
+--
+ALTER TABLE `feedbacks`
+  MODIFY `feedback_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `product`

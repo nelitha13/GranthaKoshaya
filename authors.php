@@ -34,7 +34,7 @@ if(isset($_SESSION['message'])){
 
         <div class="small-container">
             <h1 class="title">Authors
-                <?php if($_SESSION['is_admin']) { ?>
+                <?php if(isset($_SESSION['is_admin'])) { ?>
                 <span title="Add New Author"><a href="authors-add.php"><img src="images/add.png" alt="add" width="30px"
                             height="30px"></a></span>
                 <?php } ?>
