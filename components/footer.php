@@ -13,13 +13,13 @@
             <div class="footer-col-4">
                 <h3>Follow us</h3>
                 <ul>
-                    <li><a href="https://www.facebook.com/nelitha.priyawansha"><img
+                    <li><a href="https://www.facebook.com/nelitha.priyawansha" target="_blank"><img
                                 src="images/facebook.png" width="30" height="30"></a></li>
-                    <li><a href="https://www.instagram.com/nelitha14_neliya"><img src="images/instagram.png" width="30"
+                    <li><a href="https://www.instagram.com/nelitha14_neliya" target="_blank"><img src="images/instagram.png" width="30"
                                 height="30"></a></li>
-                    <li><a href="https://www.twitter.com/NelithaVindinu"><img src="images\twitter-t.png" width="30"
+                    <li><a href="https://www.twitter.com/NelithaVindinu" target="_blank"><img src="images\twitter-t.png" width="30"
                                 height="30"></a></li>
-                    <li><a href="https://github.com/nelitha14/GranthaKoshaya.git"><img src="images\GitHub.png" width="30"
+                    <li><a href="https://github.com/nelitha14/GranthaKoshaya.git" target="_blank"><img src="images\GitHub.png" width="30"
                                 height="30"></a></li>
                 </ul>
             </div>

@@ -42,7 +42,7 @@ if(isset($_SESSION['message'])){
             <input type="submit" style="
                 width:100%;
                 margin-top:20px;
-                background-color:#04aa6d;
+                background-color:#ff523b;
                 height:50px;
                 border-radius:10px;
                 color:white;

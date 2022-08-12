@@ -795,14 +795,14 @@ LIMIT 4;";
                     <i class="fa fa-quote-left"></i>
 
                     <h4>
-                        '.$row['feedback'].'
+                        ' . $row['feedback'] . '
                     </h4>
                     <div class="rating">';
-                    for($i=1;$i<=(int)$row['rating'];$i++){
-                        echo'<i class="fa fa-star"></i>';
-                    }
-                    echo'</div>
-                    <h2>'.$row['name'].'</h2>
+                for ($i = 1; $i <= (int)$row['rating']; $i++) {
+                    echo '<i class="fa fa-star"></i>';
+                }
+                echo '</div>
+                    <h2>' . $row['name'] . '</h2>
                 </div>
             </div>
         </div>

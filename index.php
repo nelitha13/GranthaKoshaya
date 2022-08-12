@@ -109,9 +109,9 @@ if (isset($_SESSION['message'])) {
 
             <h1 class="title">What People Think!</h1>
             <div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true }'>
-            <?php getAllFeedbacks() ?>
+                <?php getAllFeedbacks() ?>
             </div>
-            
+
 
             <br><br><br>
 
@@ -133,7 +133,7 @@ if (isset($_SESSION['message'])) {
                 <input type="submit" style="
                 width:100%;
                 margin-top:20px;
-                background-color:#04aa6d;
+                background-color:#ff523b;
                 height:50px;
                 border-radius:10px;
                 color:white;

@@ -1,7 +1,7 @@
 <?php
   
 // Store the file name into variable
-$file = '<?php echo "images" . $back_path[1] ?>';
+$file = 'F:/Documents/Choking.pdf';
 $filename = 'F:/Documents/Choking.pdf';
 
 // Header content type
@@ -15,5 +15,3 @@ header('Accept-Ranges: bytes');
 
 // Read the file
 @readfile($file);
-
-?>

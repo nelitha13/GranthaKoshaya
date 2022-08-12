@@ -1,7 +1,7 @@
 <?php session_start();
-    //if(!isset($_REQUEST['id'])){
-        //header('location: products.php');
-    //}
+//if(!isset($_REQUEST['id'])){
+//header('location: products.php');
+//}
 
 
 ?>
@@ -13,9 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Book - GranthaKoshaya</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="icon" type="image/x-icon" href="images\icon.png">
 </head>
@@ -24,23 +22,23 @@
     <div class="header">
         <div class="container">
 
-            <?php include_once("components/header.php");?>
+            <?php include_once("components/header.php"); ?>
 
         </div>
     </div>
     <div class="container">
-        <?php include_once("src/functions.php");?>
+        <?php include_once("src/functions.php"); ?>
 
     </div>
 
     <!-- Single Book Detail -->
     <div class="small-container single-product">
 
-        <?php if(isset($_GET['productid']))
-                getProductById($_GET['productid']);
-            else
-                getProductById($_REQUEST['id']);
-            ?>
+        <?php if (isset($_GET['productid']))
+            getProductById($_GET['productid']);
+        else
+            getProductById($_REQUEST['id']);
+        ?>
     </div>
 
     <!-- Title -->
@@ -55,17 +53,17 @@
 
     <div class="small-container">
         <div class="row">
-            <?php if(isset($_GET['productid']))
+            <?php if (isset($_GET['productid']))
                 getRelatedProducts($_GET['productid']);
             else
-            getRelatedProducts($_REQUEST['id']);
+                getRelatedProducts($_REQUEST['id']);
             ?>
         </div>
     </div>
 
     <!-- Footer -->
 
-    <?php include_once("components/footer.php");?>
+    <?php include_once("components/footer.php"); ?>
 
     <!-- JS for Toggle menu -->
 
@@ -87,24 +85,24 @@
     <script>
         var ProductImg = document.getElementById("ProductImg");
         var smallImg = document.getElementsByClassName("small-img");
-        smallImg[0].onclick = function () {
+        smallImg[0].onclick = function() {
             ProductImg.src = smallImg[0].src;
         };
-        smallImg[1].onclick = function () {
+        smallImg[1].onclick = function() {
             ProductImg.src = smallImg[1].src;
         };
-        smallImg[2].onclick = function () {
+        smallImg[2].onclick = function() {
             ProductImg.src = smallImg[2].src;
         };
-        smallImg[3].onclick = function () {
+        smallImg[3].onclick = function() {
             ProductImg.src = smallImg[3].src;
         };
     </script>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
 
-            $("#addtocart_btn").click(function () {
+            $("#addtocart_btn").click(function() {
 
                 let qty = $("#addtocart_qty").val();
                 let max = $("#addtocart_qty").attr("max");
@@ -131,7 +129,7 @@
                         data: formData,
                         contentType: false,
                         processData: false,
-                        success: function (response) {
+                        success: function(response) {
                             if (response != 0) {
                                 alert(response);
                                 $("#addtocart_qty").val(0);
