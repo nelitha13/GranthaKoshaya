@@ -1,118 +1,5 @@
 # GranthaKoshaya | ග්‍රන්ථකෝෂය 📖
 
-<p>Sri Lanka's Premium eLibrary</p>
-Through this, books, magazines etc. that are useful for the educational activities of the school children as well as the ones that many people want are easily available.
-
-# How to Run Locally
-
-1. Download All Project Files
-2. Install XAMPP or other cross platform web server to your Computer.
-3. Start MY SQL & Apache from Control Pannel.
-4. http://127.0.0.1/phpmyadmin/ go to phpMyAdmin.
-5. Create New Database.
-6. Enter "granthakoshaya" for Database Name & Create.
-7. Open this <a href="granthakoshaya.sql">SQL file</a> & Copy text on it.
-8. Go to SQL Tab in phpMyAdmin & paste text that you have copied.
-9. Finally, Run index.php File from http://127.0.0.1/GranthaKoshaya/index.php
-
-
-
-![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image1.png){width="16.94983595800525in"
-height="13.458120078740157in"}
-
-![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image2.png){width="4.4210531496062995in"
-height="4.4210531496062995in"}
-
-**GranthaKoshaya eLibrary**
-
-**Project Report**
-
-**Nelitha Vindinu Priyawansha**
-
-**Prince of Wales' College, Moratuwa**
-
-**Sri Lanka**
-
-**2022-08-09**
-
-# Table of Contents {#table-of-contents .TOC-Heading}
-
-[Table of Figures 3](#section)
-
-[Introduction 4](#introduction)
-
-[Background and Motivation 4](#background-and-motivation)
-
-[Problem in Brief 4](#problem-in-brief)
-
-[Aim & Objective 4](#aim-objective)
-
-[Advantages of e-library 5](#advantages-of-e-library)
-
-[Work Plan 5](#work-plan)
-
-[System Requirements 5](#system-requirements)
-
-[Used Technologies 8](#_Toc111187787)
-
-[System Design 8](#_Toc111187788)
-
-[System Implementation 11](#system-implementation)
-
-[Conclusion 12](#conclusion)
-
-[Future Scope 12](#future-scope)
-
-[Sources & References 12](#sources-references)
-
-# 
-
-# 
-
-# Table of Figures
-
-[Figure 1-User Login
-6](file:///F:\Programing\%23%20My%20Projects\Competitions\YCS%20Competition\Project%20Report.docx#_Toc111200033)
-
-[Figure 2-Register New User
-6](file:///F:\Programing\%23%20My%20Projects\Competitions\YCS%20Competition\Project%20Report.docx#_Toc111200034)
-
-[Figure 3-Search
-7](file:///F:\Programing\%23%20My%20Projects\Competitions\YCS%20Competition\Project%20Report.docx#_Toc111200035)
-
-[Figure 4-Add New Book
-7](file:///F:\Programing\%23%20My%20Projects\Competitions\YCS%20Competition\Project%20Report.docx#_Toc111200036)
-
-[Figure 5-Add new author
-8](file:///F:\Programing\%23%20My%20Projects\Competitions\YCS%20Competition\Project%20Report.docx#_Toc111200037)
-
-[Figure 6-Structure
-8](file:///F:\Programing\%23%20My%20Projects\Competitions\YCS%20Competition\Project%20Report.docx#_Toc111200038)
-
-[Figure 7-database
-9](file:///F:\Programing\%23%20My%20Projects\Competitions\YCS%20Competition\Project%20Report.docx#_Toc111200039)
-
-[Figure 8-company table
-9](file:///F:\Programing\%23%20My%20Projects\Competitions\YCS%20Competition\Project%20Report.docx#_Toc111200040)
-
-[Figure 9-author table
-9](file:///F:\Programing\%23%20My%20Projects\Competitions\YCS%20Competition\Project%20Report.docx#_Toc111200041)
-
-[Figure 10-category table
-9](file:///F:\Programing\%23%20My%20Projects\Competitions\YCS%20Competition\Project%20Report.docx#_Toc111200042)
-
-[Figure 11-customer table
-10](file:///F:\Programing\%23%20My%20Projects\Competitions\YCS%20Competition\Project%20Report.docx#_Toc111200043)
-
-[Figure 12-product table
-10](file:///F:\Programing\%23%20My%20Projects\Competitions\YCS%20Competition\Project%20Report.docx#_Toc111200044)
-
-[Figure 13-customer product table
-10](file:///F:\Programing\%23%20My%20Projects\Competitions\YCS%20Competition\Project%20Report.docx#_Toc111200045)
-
-[Figure 14-feedback table
-10](file:///F:\Programing\%23%20My%20Projects\Competitions\YCS%20Competition\Project%20Report.docx#_Toc111200046)
-
 # Introduction
 
 A library system is essential for a country. Although Sri Lanka\'s
@@ -241,21 +128,6 @@ The main objectives of e-Libraries are as follows:
     access restrictions. Articles can be rated by the user and
     discussion forums can be created.
 
-# Work Plan
-
-  Task      Activity                               Days to Complete
-  --------- -------------------------------------- ------------------
-  Task 01   Project Selection                      02
-  Task 02   Planning how to do the project         02
-  Task 03   Gathering Information from Libraries   02
-  Task 04   Designing main UI/UX of the website    03
-  Task 05   Building the front end of website      05
-  Task 06   Create and Database to the website     02
-  Task 07   Building the back end of website       04
-  Task 07   Testing and debugging                  02
-  Task 08   Deployment                             01
-  Task 09   Further modifications                  02
-
 # System Requirements
 
 1.  ## Non-Functional Requirements
@@ -286,7 +158,7 @@ The main objectives of e-Libraries are as follows:
 
 2.  ## Functional Requirements
 
-    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image3.png){width="2.8131944444444446in" height="2.1798611111111112in"}User Login
+    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image3.png)User Login
 
 > This feature used by the user to login into system. They are required
 > to enter user id and password before they are allowed to enter the
@@ -303,7 +175,7 @@ The main objectives of e-Libraries are as follows:
 
 -   The user must be able to logout after they finished using system.
 
-    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image4.png){width="2.813888888888889in" height="3.0145833333333334in"}Register New User
+    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image4.png)Register New User
 
 > This feature can be performed by all users to register new user to
 > create account.
@@ -312,7 +184,7 @@ The main objectives of e-Libraries are as follows:
 
 -   System must be able to delete information if information is wrong.
 
-    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image5.png){width="6.790972222222222in" height="3.7604166666666665in"}Search Book
+    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image5.png)}Search Book
 
 > This feature is found in book maintenance part. we can search book
 > based on book id, book name, publication or by author name.
@@ -324,7 +196,7 @@ The main objectives of e-Libraries are as follows:
 
 -   System must be able to show the filtered book in book view.
 
-    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image6.png){width="4.895138888888889in" height="1.99375in"}Add New Book
+    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image6.png)Add New Book
 
 > This feature allows to add new books to the library. Only
 > administrators can use this feature.
@@ -335,7 +207,7 @@ The main objectives of e-Libraries are as follows:
 
 -   System must be able to not allow two books having same book id.
 
-    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image7.png){width="4.534722222222222in" height="2.2069444444444444in"}Add New Author
+    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image7.png)Add New Author
 
 > This feature allows to add new authors to the library. Only
 > administrators can use this feature.
@@ -385,9 +257,6 @@ client by using PHP , MYSQL and APACHE with WAMP
 server. System diagram and system database diagram are illustrated in
 Figures (1,a) and (1,b) respectively.
 
-  -- --
-     
-  -- --
 
 The system is divided into two parts, the first part is Admin side with
 database represent the server, and the second part is the User Interface
@@ -410,81 +279,9 @@ side with database represent the server, and the
 second part isthe E-Library User Interfaceside that represents the
 client by using PHP , MYSQL and APACHE with WAMP
 
-server. System diagram and system database diagram are illustrated in
-Figures (1,a) and (1,b) respectively.
+server.
 
--   ## Table Design
 
-```{=html}
-<!-- -->
-```
--   ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image8.png){width="6.575in"
-    height="1.8993055555555556in"}Database
-
--   ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image9.png){width="5.84375in"
-    height="1.575in"}Company Table from Database
-
--   ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image10.png){width="6.719444444444444in"
-    height="1.4902777777777778in"}Author Table from Database
-
--   ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image11.png){width="6.611111111111111in"
-    height="1.1222222222222222in"}Category Table from Database
-
--   ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image12.png){width="6.320138888888889in"
-    height="1.96875in"}Customer Table from Database
-
--   ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image13.png){width="5.348611111111111in"
-    height="2.3368055555555554in"}Product Table from Database
-
-![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image14.png){width="5.716666666666667in"
-height="2.088888888888889in"}
-
--   Customer-Product Table from Database
-
--   ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image15.png){width="6.545833333333333in"
-    height="1.4340277777777777in"}Feedback Table from Database
-
-```{=html}
-<!-- -->
-```
--   ## Front End Design
-
-  File Name                                                           File Type   What is this File?
-  ------------------------------------------------------------------- ----------- ---------------------------------
-  index                                                               PHP         Home page
-  aboutus                                                             PHP         About of the site
-  adminproducts                                                       PHP         Administrators can manage books
-  author-details                                                      PHP         Details of selected author
-  authors-add                                                         PHP         add authors
-  authors                                                             PHP         All authors
-  cart                                                                PHP         User cart
-  categories                                                          PHP         All Categories
-  categories-add                                                      PHP         Category add
-  category-details                                                    PHP         Details of selected category
-  contact                                                             PHP         Contact granthakoshaya
-  ebook-view                                                          PHP         Read ebook online
-  error                                                               PHP         Error page
-  granthakoshaya                                                      SQL         Main database file
-  product-details                                                     PHP         Details of selected book
-  product-add                                                         PHP         add books
-  products                                                            PHP         All books
-  readme                                                              MD          Main readme file
-  search-results                                                      PHP         Display search results
-  style                                                               CSS         Main style sheet
-  .github Contains files and issue templates of GitHub repositories               
-  components                                                                      
-  / footer                                                            PHP         Footer of the site
-  / header                                                            PHP         Header of the site
-  ebooks Contains all pdf file of the books.                                      
-  resources                                                                       
-  flickity                                                            CSS         Feedback gallery css
-  flickity.pkgd                                                       JS          Feedback gallery JS
-  images Contains all images                                                      
-  mail Contains mailing files of contact us page                                  
-  src                                                                             
-  / conn                                                              PHP         Server connection
-  / functions                                                         PHP         Contains all functions
-  / server                                                            PHP         
 
 # System Implementation
 
@@ -536,13 +333,3 @@ assignments submission facility, a feature of students can request books
 from chat with admins and requesting notes from chat with teachers. And
 also give support for audiobooks. I expected to GranthaKoshaya is best
 library system of Sri Lanka.
-
-# Sources & References
-
--   [www.google.com](http://www.google.com)
-
--   [www.wikipedia.org](http://www.wikipedia.org)
-
--   [www.youtube.com](http://www.youtube.com)
-
--   [www.w3schools.com](http://www.w3schools.com)
