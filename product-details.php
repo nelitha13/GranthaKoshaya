@@ -131,6 +131,7 @@
                         processData: false,
                         success: function(response) {
                             if (response != 0) {
+                                console.log(response);
                                 alert(response);
                                 $("#addtocart_qty").val(0);
 

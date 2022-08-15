@@ -42,7 +42,7 @@ if(isset($_SESSION['message'])){
 
 
         </div>
-        <div style="width: 80%; display: inline; text-align: center;">
+        <div class="grid">
             <?php getCategories(); ?>
         </div>
 

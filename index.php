@@ -86,7 +86,7 @@ if (isset($_SESSION['message'])) {
 
     <div class="small-container">
         <h1 class="title">Authors</h1>
-        <div class="row">
+        <div class="grid">
 
             <?php getMostFamousAuthor() ?>
             <a href="authors.php" class="btn">View All Authors <i class="fa fa-arrow-right"></i></a>
@@ -97,7 +97,7 @@ if (isset($_SESSION['message'])) {
         <br><br>
         <div class="small-container">
             <h1 class="title">Categories</h1>
-            <div class="row">
+            <div class="grid">
 
                 <?php getMostFamousCategory() ?>
                 <a href="categories.php" class="btn">View All Categories <i class="fa fa-arrow-right"></i></a>

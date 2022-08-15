@@ -134,31 +134,23 @@ The main objectives of e-Libraries are as follows:
 
     1.  ### Efficiency Requirement
 
-> When a library management system will be implemented librarian and
-> user will easily access library as searching and book transaction will
-> be very faster.
+> When a library management system will be implemented librarian and user will easily access library as searching and book transaction will be very faster.
 
 ### Reliability Requirement
 
-> The system should accurately perform member registration, member
-> validation, report generation, book transaction and search
+> The system should accurately perform member registration, member validation, report generation, book transaction and search
 
 ### Usability Requirement
 
-> The system is designed for a user-friendly environment so that student
-> and staff of library can perform the various tasks easily and in an
-> effective way.
+> The system is designed for a user-friendly environment so that student and staff of library can perform the various tasks easily and in an effective way.
 
 ### Implementation Requirements
 
-> In implementing whole system, it uses HTML in front end with PHP as
-> server-side scripting language which will be used for database
-> connectivity and the backend is the database part is developed using
-> MySQL.
+> In implementing whole system, it uses HTML in front end with PHP as server-side scripting language which will be used for database connectivity and the backend is the database part is developed using MySQL.
 
 2.  ## Functional Requirements
 
-    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image3.png)User Login
+    1.  ### ![]()User Login
 
 > This feature used by the user to login into system. They are required
 > to enter user id and password before they are allowed to enter the
@@ -175,7 +167,7 @@ The main objectives of e-Libraries are as follows:
 
 -   The user must be able to logout after they finished using system.
 
-    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image4.png)Register New User
+    1.  ### ![]()Register New User
 
 > This feature can be performed by all users to register new user to
 > create account.
@@ -184,7 +176,7 @@ The main objectives of e-Libraries are as follows:
 
 -   System must be able to delete information if information is wrong.
 
-    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image5.png)}Search Book
+    1.  ### ![]()}Search Book
 
 > This feature is found in book maintenance part. we can search book
 > based on book id, book name, publication or by author name.
@@ -196,10 +188,9 @@ The main objectives of e-Libraries are as follows:
 
 -   System must be able to show the filtered book in book view.
 
-    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image6.png)Add New Book
+    1.  ### ![]()Add New Book
 
-> This feature allows to add new books to the library. Only
-> administrators can use this feature.
+> This feature allows to add new books to the library. Only administrators can use this feature.
 
 -   System must be able to verify information.
 
@@ -207,10 +198,9 @@ The main objectives of e-Libraries are as follows:
 
 -   System must be able to not allow two books having same book id.
 
-    1.  ### ![](vertopal_3d6dbdcc27784021a9dec4116ff93411/media/image7.png)Add New Author
+    1.  ### ![]()Add New Author
 
-> This feature allows to add new authors to the library. Only
-> administrators can use this feature.
+> This feature allows to add new authors to the library. Only administrators can use this feature.
 
 -   System must be able to verify information.
 
@@ -233,11 +223,6 @@ The main objectives of e-Libraries are as follows:
 
 -   Apache with XAMPP (For local)
 
-    -   (For online)
-
-```{=html}
-<!-- -->
-```
 -   Database - MySQL
 
 -   Code Editor -- Microsoft Visual Studio Code 2022
@@ -249,38 +234,8 @@ The main objectives of e-Libraries are as follows:
 # System Design
 
 The system is divided into two parts, the first part is SearchSystem
-side with database represent the server, and the
-
-second part isthe E-Library User Interfaceside that represents the
-client by using PHP , MYSQL and APACHE with WAMP
-
-server. System diagram and system database diagram are illustrated in
-Figures (1,a) and (1,b) respectively.
-
-
-The system is divided into two parts, the first part is Admin side with
-database represent the server, and the second part is the User Interface
-side that represents the client by using PHP, MYSQL and APACHE with
-XAMPP server. System diagram and system database diagram are illustrated
-in Figure.
-
-The system is divided into two parts, the first part is SearchSystem
-side with database represent the server, and the
-
-second part isthe E-Library User Interfaceside that represents the
-client by using PHP , MYSQL and APACHE with WAMP
-
-server. System diagram and system database diagram are illustrated in
-Figures (1,a) and (1,b) respectively.
-
-The system is divided into two parts, the first part is SearchSystem
-side with database represent the server, and the
-
-second part isthe E-Library User Interfaceside that represents the
-client by using PHP , MYSQL and APACHE with WAMP
-
-server.
-
+side with database represent the server, and the second part isthe E-Library User Interfaceside that represents the
+client by using PHP , MYSQL and APACHE with WAMP server.
 
 
 # System Implementation

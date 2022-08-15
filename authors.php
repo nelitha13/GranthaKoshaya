@@ -29,8 +29,10 @@ if(isset($_SESSION['message'])){
 
         </div>
     </div>
+    <?php include_once("src/functions.php");?>
+    
     <div class="container">
-        <?php include_once("src/functions.php");?>
+        
 
         <div class="small-container">
             <h1 class="title">Authors
@@ -42,11 +44,9 @@ if(isset($_SESSION['message'])){
 
 
         </div>
-        <div style="width: 80%; display: inline; text-align: center;">
-            <?php getAuthorDetails(); ?>
+        <div class="grid">
+        <?php getAuthorDetails(); ?>
         </div>
-
-
     </div>
 
     <br>

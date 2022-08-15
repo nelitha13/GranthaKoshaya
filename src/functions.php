@@ -254,7 +254,7 @@ function getProductById($id)
             </div>
 
             <div class="col-2">
-                <input id="addtocart_id" value="<?php echo $row["id"]; ?>" hidden></p>
+                <input id="addtocart_id" value="<?php echo $id; ?>" hidden></p>
                 <p><?php echo $row["category"]; ?></p>
                 <h2><?php echo $row["name"]; ?></h2>
 
@@ -274,11 +274,16 @@ function getProductById($id)
                     ?>
 
                             <input type="number" value="0" id="addtocart_qty" max="<?php echo $stock ?>" min="0" />
-                            <span><a href="cart.php" id="addtocart_btn" class="btn">Add to Cart</a></span>
-                            <a href="ebook-view.php" target="_blank" class="btn">Read Book (Free)</a>
+                            <span><button id="addtocart_btn" class="btn">Add to Cart</button></span>
+                            <a href="ebook-view.php?product_id=<?php echo $id ?>" target="_blank" class="btn">Read Book (Free)</a>
 
-                <?php
+                        <?php
                         }
+                    } else {
+                        ?>
+                        <span><a href="account.php" class="btn">Add to Cart</a></span>
+                        <a href="ebook-view.php?product_id=<?php echo $id ?>" target="_blank" class="btn">Read Book (Free)</a>
+                <?php
                     }
                 }
                 ?>
@@ -555,239 +560,128 @@ function getAuthorDetails()
     while ($row = mysqli_fetch_assoc($result)) {
         $img = './images/author images/' . $row['author_img'];
 ?>
+
+        <article>
         <a href="author-details.php?author=<?php echo $row['Author']; ?>">
-
-            <div style="
-    border:1px solid;
-    margin: 15px;
-    padding:0;
-    height: 250px;
-    width: 20%;
-    position: relative;
-    background-image: url('<?php echo $img; ?>');
-    background-size: contain;
-    display: inline-block;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px 3px #000000;
-    ">
-
-                <div style="
-        display: inline-block;
-        position: absolute;
-        top : 150px;
-        left: 10%; 
-        width: 80%;
-        height: 100px;
-        color: #555;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        ">
-                    <?php echo $row['Author']; ?>
-
-                    <div class="title" style="margin-top: 5px;"></div>
-
-                </div>
-
-
-
+            <img src="<?php echo $img ?>" alt="img">
+            <div class="text">
+                <h3><?php echo $row['Author']; ?></h3>
+                <button><a href="author-details.php?author=<?php echo $row['Author']; ?>">View Books</a></button>
             </div>
+        </a>
+        </article>
 
-
-    <?php
+<?php
 
     }
 }
-    ?>
+?>
 
 
-    <!-- Get All categories -->
-    <?php
+<!-- Get All categories -->
+<?php
 
-    function getCategories()
-    {
+function getCategories()
+{
 
-        global $db;
+    global $db;
 
-        $query = "SELECT * FROM category";
-        $result = mysqli_query($db, $query);
+    $query = "SELECT * FROM category";
+    $result = mysqli_query($db, $query);
 
-        while ($row = mysqli_fetch_assoc($result)) {
-            $img = './images/category images/' . $row['cat_img'];
-    ?>
+    while ($row = mysqli_fetch_assoc($result)) {
+        $img = './images/category images/' . $row['cat_img'];
+?>
 
+        <article>
             <a href="category-details.php?category=<?php echo $row['cat_name']; ?>">
-                <div style="
-    border:1px solid;
-    margin: 35px;
-    padding: 4px;
-    height: 300px;
-    width: 25%;
-    position: relative;
-    background-image: url('<?php echo $img; ?>');
-    background-size: contain;
-    display: inline-block;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px 3px #000000;
-    ">
-
-                    <div style="
-        display: inline-block;
-        position: absolute;
-        top : 150px;
-        left: 10%; 
-        width: 80%;
-        height: 100px;
-        color: #555;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        ">
-                        <?php echo $row['cat_name']; ?>
-
-                        <div class="title" style="margin-top: 5px;"></div>
-
-                    </div>
-
-
-
+                <img src="<?php echo $img ?>" alt="img">
+                <div class="text">
+                    <h3><?php echo $row['cat_name']; ?></h3>
+                    <button><a href="category-details.php?category=<?php echo $row['cat_name']; ?>">View Books</a></button>
                 </div>
             </a>
+        </article>
 
-    <?php
+<?php
 
-        }
     }
-    ?>
+}
+?>
 
 
-    <!-- Get Famous Author -->
-    <?php function getMostFamousAuthor()
-    {
-        global $db;
-        $query = "SELECT DISTINCT a.Author,a.author_img
+<!-- Get Famous Author -->
+<?php function getMostFamousAuthor()
+{
+    global $db;
+    $query = "SELECT DISTINCT a.Author,a.author_img
 FROM author a, product p
 WHERE p.Author_ID=a.Author_ID AND p.id IN
 (SELECT product_id FROM customer_product GROUP BY product_id ORDER BY COUNT(product_id) DESC)
 LIMIT 4;";
-        $results = mysqli_query($db, $query);
-        if ($results) {
-            while ($row = mysqli_fetch_assoc($results)) {
-                $img = './images/author images/' . $row['author_img'];
-    ?>
+    $results = mysqli_query($db, $query);
+    if ($results) {
+        while ($row = mysqli_fetch_assoc($results)) {
+            $img = './images/author images/' . $row['author_img'];
+?>
 
-                <div style="
-    border:1px solid;
-    margin: 15px;
-    padding:0;
-    height: 250px;
-    width: 20%;
-    position: relative;
-    background-image: url('<?php echo $img; ?>');
-    background-size: contain;
-    display: inline-block;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px 3px #000000;
-    ">
-
-                    <div style="
-        display: inline-block;
-        position: absolute;
-        top : 150px;
-        left: 10%; 
-        width: 80%;
-        height: 100px;
-        color: #555;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        ">
-                        <?php echo $row['Author']; ?>
-
-                        <div class="title" style="margin-top: 5px;"></div>
-
-                    </div>
-
-
-
+            <article>
+            <a href="author-details.php?author=<?php echo $row['Author']; ?>">
+                <img src="<?php echo $img ?>" alt="img">
+                <div class="text">
+                    <h3><?php echo $row['Author']; ?></h3>
+                    <button><a href="author-details.php?author=<?php echo $row['Author']; ?>">View Books</a></button>
                 </div>
-    <?php
-            }
+            </a>
+            </article>
+
+<?php
         }
     }
-    ?>
+}
+?>
 
 
-    <!-- Get Famous Category -->
-    <?php function getMostFamousCategory()
-    {
-        global $db;
-        $query = "SELECT DISTINCT c.cat_name, c.cat_img
+<!-- Get Famous Category -->
+<?php function getMostFamousCategory()
+{
+    global $db;
+    $query = "SELECT DISTINCT c.cat_name, c.cat_img
 FROM category c, product p
 WHERE p.cat_id=c.cat_id AND p.id IN
 (SELECT product_id FROM customer_product GROUP BY product_id ORDER BY COUNT(product_id) DESC)
 LIMIT 4;";
-        $results = mysqli_query($db, $query);
-        if ($results) {
-            while ($row = mysqli_fetch_assoc($results)) {
-                $img = './images/category images/' . $row['cat_img'];
-    ?>
+    $results = mysqli_query($db, $query);
+    if ($results) {
+        while ($row = mysqli_fetch_assoc($results)) {
+            $img = './images/category images/' . $row['cat_img'];
+?>
 
-                <div style="
-    border:1px solid;
-    margin: 15px;
-    padding:0;
-    height: 250px;
-    width: 20%;
-    position: relative;
-    background-image: url('<?php echo $img; ?>');
-    background-size: contain;
-    display: inline-block;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 1px 1px 5px 3px #000000;
-    ">
-
-                    <div style="
-        display: inline-block;
-        position: absolute;
-        top : 150px;
-        left: 10%; 
-        width: 80%;
-        height: 100px;
-        color: #555;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        ">
-                        <?php echo $row['cat_name']; ?>
-
-                        <div class="title" style="margin-top: 5px;"></div>
-
-                    </div>
-
-
-
+            <article>
+            <a href="category-details.php?category=<?php echo $row['cat_name']; ?>">
+                <img src="<?php echo $img ?>" alt="img">
+                <div class="text">
+                    <h3><?php echo $row['cat_name']; ?></h3>
+                    <button><a href="category-details.php?category=<?php echo $row['cat_name']; ?>">View Books</a></button>
                 </div>
-    <?php
-            }
+            </a>
+            </article>
+<?php
         }
     }
-    ?>
+}
+?>
 
 
-    <!-- Get All Feedbacks -->
-    <?php function getAllFeedbacks()
-    {
-        global $db;
-        $sql = "select * from feedbacks";
-        $results = mysqli_query($db, $sql);
-        if ($results) {
-            while ($row = mysqli_fetch_assoc($results)) {
-                echo '
+<!-- Get All Feedbacks -->
+<?php function getAllFeedbacks()
+{
+    global $db;
+    $sql = "select * from feedbacks";
+    $results = mysqli_query($db, $sql);
+    if ($results) {
+        while ($row = mysqli_fetch_assoc($results)) {
+            echo '
                 <div class="feedback">
         <div class="small-container">
             <div class="row">
@@ -798,106 +692,106 @@ LIMIT 4;";
                         ' . $row['feedback'] . '
                     </h4>
                     <div class="rating">';
-                for ($i = 1; $i <= (int)$row['rating']; $i++) {
-                    echo '<i class="fa fa-star"></i>';
-                }
-                echo '</div>
+            for ($i = 1; $i <= (int)$row['rating']; $i++) {
+                echo '<i class="fa fa-star"></i>';
+            }
+            echo '</div>
                     <h2>' . $row['name'] . '</h2>
                 </div>
             </div>
         </div>
     </div>';
-            }
         }
     }
-    ?>
+}
+?>
 
-    <!--  Get All Items -->
-    <?php
+<!--  Get All Items -->
+<?php
 
-    function getAdminProducts()
-    {
-
-
-
-        global $db;
-
-        $company_id = $_SESSION['id'];
-
-        // $query = "SELECT *,SUM(qty),product_id FROM customer_product JOIN product on product.id =customer_product.product_id GROUP BY product_id ";
-        $query = "SELECT * FROM product WHERE company_id = " . $company_id;
-        $adminProducts = mysqli_query($db, $query);
+function getAdminProducts()
+{
 
 
-        while ($row = mysqli_fetch_assoc($adminProducts)) {
 
-            $iqtyQuery = "SELECT iqty FROM product where id=" . $row["id"];
-            $iqtyResult = mysqli_query($db, $iqtyQuery);
+    global $db;
 
-            $saleQuery = "SELECT COALESCE(SUM(qty),0) FROM customer_product where product_id=" . $row["id"];
-            $saleResult = mysqli_query($db, $saleQuery);
+    $company_id = $_SESSION['id'];
 
-            $iqty = mysqli_fetch_assoc($iqtyResult)['iqty'];
-            $sales = mysqli_fetch_assoc($saleResult)['COALESCE(SUM(qty),0)'];
-
-            $query = "SELECT SUM(qty) FROM customer_product WHERE product_id=" . $row['id'] . " AND is_shipped = 0";
-            $pendingorders = mysqli_query($db, $query);
-            $pendingordersData = mysqli_fetch_assoc($pendingorders);
-
-            $query = "SELECT SUM(qty) FROM customer_product WHERE product_id=" . $row['id'];
-            $totalsale = mysqli_query($db, $query);
-            $totalsaleData = mysqli_fetch_assoc($totalsale);
-
-            $stock = $iqty - $sales;
-
-            $back_path = explode("images", $row["img"]);
-    ?>
+    // $query = "SELECT *,SUM(qty),product_id FROM customer_product JOIN product on product.id =customer_product.product_id GROUP BY product_id ";
+    $query = "SELECT * FROM product WHERE company_id = " . $company_id;
+    $adminProducts = mysqli_query($db, $query);
 
 
-            <tr class="<?php if ($pendingordersData['SUM(qty)'] > 0) {
-                            echo "pendingorder ";
-                        } else if ($stock <= 0) {
-                            echo "outofstock ";
-                        } ?>">
-                <td>
-                    <div class="cart-info">
-                        <img src="<?php echo "images" . $back_path[1] ?>" alt="image" />
-                        <div>
-                            <p><?php echo $row["name"]; ?></p>
-                            <small>Price: Rs.<span class="addtocart_price" id="<?php echo $row["id"]; ?>"><?php echo $row["price"]; ?></span></small>
-                            <br />
-                        </div>
+    while ($row = mysqli_fetch_assoc($adminProducts)) {
+
+        $iqtyQuery = "SELECT iqty FROM product where id=" . $row["id"];
+        $iqtyResult = mysqli_query($db, $iqtyQuery);
+
+        $saleQuery = "SELECT COALESCE(SUM(qty),0) FROM customer_product where product_id=" . $row["id"];
+        $saleResult = mysqli_query($db, $saleQuery);
+
+        $iqty = mysqli_fetch_assoc($iqtyResult)['iqty'];
+        $sales = mysqli_fetch_assoc($saleResult)['COALESCE(SUM(qty),0)'];
+
+        $query = "SELECT SUM(qty) FROM customer_product WHERE product_id=" . $row['id'] . " AND is_shipped = 0";
+        $pendingorders = mysqli_query($db, $query);
+        $pendingordersData = mysqli_fetch_assoc($pendingorders);
+
+        $query = "SELECT SUM(qty) FROM customer_product WHERE product_id=" . $row['id'];
+        $totalsale = mysqli_query($db, $query);
+        $totalsaleData = mysqli_fetch_assoc($totalsale);
+
+        $stock = $iqty - $sales;
+
+        $back_path = explode("images", $row["img"]);
+?>
+
+
+        <tr class="<?php if ($pendingordersData['SUM(qty)'] > 0) {
+                        echo "pendingorder ";
+                    } else if ($stock <= 0) {
+                        echo "outofstock ";
+                    } ?>">
+            <td>
+                <div class="cart-info">
+                    <img src="<?php echo "images" . $back_path[1] ?>" alt="image" />
+                    <div>
+                        <p><?php echo $row["name"]; ?></p>
+                        <small>Price: Rs.<span class="addtocart_price" id="<?php echo $row["id"]; ?>"><?php echo $row["price"]; ?></span></small>
+                        <br />
                     </div>
-                </td>
+                </div>
+            </td>
 
-                <td><?php echo $row["category"]; ?></td>
-                <td><input type="number" id="edititem_value<?php echo $row["id"] ?>" style="width:70px;" value="<?php echo $stock ?>" disabled min="0" />
-                </td>
-                <td><?php echo $pendingordersData['SUM(qty)'] == 0 ? 0 : $pendingordersData['SUM(qty)'] ?></td>
-                <td><?php echo $totalsaleData['SUM(qty)'] == 0 ? 0 : $totalsaleData['SUM(qty)'] ?></td>
-                <td>
+            <td><?php echo $row["category"]; ?></td>
+            <td><input type="number" id="edititem_value<?php echo $row["id"] ?>" style="width:70px;" value="<?php echo $stock ?>" disabled min="0" />
+            </td>
+            <td><?php echo $pendingordersData['SUM(qty)'] == 0 ? 0 : $pendingordersData['SUM(qty)'] ?></td>
+            <td><?php echo $totalsaleData['SUM(qty)'] == 0 ? 0 : $totalsaleData['SUM(qty)'] ?></td>
+            <td>
 
-                    <?php if ($pendingordersData['SUM(qty)'] != 0) { ?>
+                <?php if ($pendingordersData['SUM(qty)'] != 0) { ?>
 
-                        <i id="<?php echo $row["id"]; ?>" class="fas fa-shipping-fast shiporder_btn"></i>
+                    <i id="<?php echo $row["id"]; ?>" class="fas fa-shipping-fast shiporder_btn"></i>
 
-                    <?php } else { ?>
+                <?php } else { ?>
 
-                        <i id="<?php echo $row["id"]; ?>" class="far fa-edit edititem_btn edititem_btn<?php echo $row["id"]; ?>"></i>
-                        <span hidden><i id="<?php echo $row["id"]; ?>" class="fas fa-save saveitem_btn saveitem_btn<?php echo $row["id"]; ?>"></i></span>
-                        <i id="<?php echo $row["id"]; ?>" class="far fa-trash-alt removeitem_btn"></i>
+                    <i id="<?php echo $row["id"]; ?>" class="far fa-edit edititem_btn edititem_btn<?php echo $row["id"]; ?>"></i>
+                    <span hidden><i id="<?php echo $row["id"]; ?>" class="fas fa-save saveitem_btn saveitem_btn<?php echo $row["id"]; ?>"></i></span>
+                    <i id="<?php echo $row["id"]; ?>" class="far fa-trash-alt removeitem_btn"></i>
 
-                    <?php } ?>
-                </td>
-
-
-            </tr>
+                <?php } ?>
+            </td>
 
 
-    <?php
+        </tr>
+
+
+<?php
 
 
 
-        }
     }
-    ?>
+}
+?>

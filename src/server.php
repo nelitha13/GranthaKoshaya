@@ -302,7 +302,7 @@ if (isset($_POST['add-product'])){
 
 	$file_pdf = $_FILES['pdf']['name'];
 	$file_loc_pdf = $_FILES['pdf']['tmp_name'];
-	$folder_pdf = "../ebooks/";
+	$folder_pdf = "./ebooks/";
 	$new_file_name_pdf = strtolower($file_pdf);
 	$final_file_pdf = str_replace(' ', '-', $new_file_name_pdf);
 	$final_file_pdf = rand() . "-" . $final_file_pdf; //add impure

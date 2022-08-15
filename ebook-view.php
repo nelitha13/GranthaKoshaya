@@ -1,8 +1,19 @@
-<?php
-  
+<?php session_start();
+    if (!isset($_SESSION['user_email'])) {
+        header('location: account.php');
+    } 
+    
+include_once('src/conn.php'); 
+
+global $db;
+$query = "SELECT ebook FROM product WHERE id='".$_GET['product_id']."'";
+$results=mysqli_query($db,$query);
+$row=mysqli_fetch_array($results,MYSQLI_ASSOC);
+$path=$row['ebook'];
+
 // Store the file name into variable
-$file = 'F:/Documents/Choking.pdf';
-$filename = 'F:/Documents/Choking.pdf';
+$file = $path;
+$filename = $path;
 
 // Header content type
 header('Content-type: application/pdf');
