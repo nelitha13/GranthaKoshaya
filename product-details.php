@@ -16,6 +16,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="icon" type="image/x-icon" href="images\icon.png">
+    <script src="resources\jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('a.unableClick').click(function(e) {
+                e.preventDefault();
+                var div = document.getElementById('dvEmbedPdfviewer');
+                //var URl = $(this).attr('href') + "#view=FitH&toolbar=0";
+                var URl = $(this).attr('href') + "#toolbar=0&navpanes=0&scrollbar=0";
+                var EmbedHtml = "<embed id='embed' src='" + URl + "' height='600' width='1000' />"
+                div.innerHTML = EmbedHtml;
+            });
+        });
+    </script>
+    <script>
+        function view_pdf() {
+            document.getElementById('dvEmbedPdfviewer').scrollIntoView(true);
+            document.getElementById('dvEmbedPdfviewer').scrolltop -=200;
+        }
+    </script>
 </head>
 
 <body>

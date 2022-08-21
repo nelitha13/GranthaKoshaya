@@ -179,7 +179,7 @@ function getProductsBySearch($keyword)
 {
 
     global $db;
-    $query = "SELECT * FROM product WHERE name LIKE '%" . $keyword . "%' OR description LIKE '%" . $keyword . "%' OR category LIKE '%" . $keyword . "%' ORDER BY id DESC LIMIT 12";
+    $query = "SELECT * FROM product WHERE name LIKE '%" . $keyword . "%' OR description LIKE '%" . $keyword . "%' OR category LIKE '%" . $keyword . "%' OR author LIKE '%" . $keyword . "%' ORDER BY id DESC LIMIT 12";
     $result = mysqli_query($db, $query);
     while ($row = mysqli_fetch_assoc($result)) {
 
@@ -275,14 +275,14 @@ function getProductById($id)
 
                             <input type="number" value="0" id="addtocart_qty" max="<?php echo $stock ?>" min="0" />
                             <span><button id="addtocart_btn" class="btn">Add to Cart</button></span>
-                            <a href="ebook-view.php?product_id=<?php echo $id ?>" target="_blank" class="btn">Read Book (Free)</a>
-
+                            <button class="btn" onclick="view_pdf()"><a class="unableClick" href="<?php echo $row ['ebook'] ?>">Read Book (Free)</a></button>
+                            
                         <?php
                         }
                     } else {
                         ?>
                         <span><a href="account.php" class="btn">Add to Cart</a></span>
-                        <a href="ebook-view.php?product_id=<?php echo $id ?>" target="_blank" class="btn">Read Book (Free)</a>
+                        <button class="btn"><a class="unableClick" href="<?php echo $row ['ebook'] ?>">Read Book (Free)</a></button>
                 <?php
                     }
                 }
@@ -298,6 +298,8 @@ function getProductById($id)
                 <h3>Book Details<i class="fa fa-indent"></i></h3>
                 <p><?php echo $row["description"]; ?></p>
             </div>
+        </div>
+        <div id="dvEmbedPdfviewer">
         </div>
 <?php
 
@@ -562,13 +564,13 @@ function getAuthorDetails()
 ?>
 
         <article>
-        <a href="author-details.php?author=<?php echo $row['Author']; ?>">
-            <img src="<?php echo $img ?>" alt="img">
-            <div class="text">
-                <h3><?php echo $row['Author']; ?></h3>
-                <button><a href="author-details.php?author=<?php echo $row['Author']; ?>">View Books</a></button>
-            </div>
-        </a>
+            <a href="author-details.php?author=<?php echo $row['Author']; ?>">
+                <img src="<?php echo $img ?>" alt="img">
+                <div class="text">
+                    <h3><?php echo $row['Author']; ?></h3>
+                    <button><a href="author-details.php?author=<?php echo $row['Author']; ?>">View Books</a></button>
+                </div>
+            </a>
         </article>
 
 <?php
@@ -626,13 +628,13 @@ LIMIT 4;";
 ?>
 
             <article>
-            <a href="author-details.php?author=<?php echo $row['Author']; ?>">
-                <img src="<?php echo $img ?>" alt="img">
-                <div class="text">
-                    <h3><?php echo $row['Author']; ?></h3>
-                    <button><a href="author-details.php?author=<?php echo $row['Author']; ?>">View Books</a></button>
-                </div>
-            </a>
+                <a href="author-details.php?author=<?php echo $row['Author']; ?>">
+                    <img src="<?php echo $img ?>" alt="img">
+                    <div class="text">
+                        <h3><?php echo $row['Author']; ?></h3>
+                        <button><a href="author-details.php?author=<?php echo $row['Author']; ?>">View Books</a></button>
+                    </div>
+                </a>
             </article>
 
 <?php
@@ -658,13 +660,13 @@ LIMIT 4;";
 ?>
 
             <article>
-            <a href="category-details.php?category=<?php echo $row['cat_name']; ?>">
-                <img src="<?php echo $img ?>" alt="img">
-                <div class="text">
-                    <h3><?php echo $row['cat_name']; ?></h3>
-                    <button><a href="category-details.php?category=<?php echo $row['cat_name']; ?>">View Books</a></button>
-                </div>
-            </a>
+                <a href="category-details.php?category=<?php echo $row['cat_name']; ?>">
+                    <img src="<?php echo $img ?>" alt="img">
+                    <div class="text">
+                        <h3><?php echo $row['cat_name']; ?></h3>
+                        <button><a href="category-details.php?category=<?php echo $row['cat_name']; ?>">View Books</a></button>
+                    </div>
+                </a>
             </article>
 <?php
         }
