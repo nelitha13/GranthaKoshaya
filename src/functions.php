@@ -620,7 +620,7 @@ function getCategories()
 FROM author a, product p
 WHERE p.Author_ID=a.Author_ID AND p.id IN
 (SELECT product_id FROM customer_product GROUP BY product_id ORDER BY COUNT(product_id) DESC)
-LIMIT 4;";
+LIMIT 3;";
     $results = mysqli_query($db, $query);
     if ($results) {
         while ($row = mysqli_fetch_assoc($results)) {
@@ -652,7 +652,7 @@ LIMIT 4;";
 FROM category c, product p
 WHERE p.cat_id=c.cat_id AND p.id IN
 (SELECT product_id FROM customer_product GROUP BY product_id ORDER BY COUNT(product_id) DESC)
-LIMIT 4;";
+LIMIT 3;";
     $results = mysqli_query($db, $query);
     if ($results) {
         while ($row = mysqli_fetch_assoc($results)) {
