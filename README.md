@@ -288,3 +288,6 @@ assignments submission facility, a feature of students can request books
 from chat with admins and requesting notes from chat with teachers. And
 also give support for audiobooks. I expected to GranthaKoshaya is best
 library system of Sri Lanka.
+
+### Made with ❤️ by <a href="https://github.com/nelitha14/GranthaKoshaya.git">Nelitha Priyawansha</a>.
+### © 2022 GranthaKoshaya All Rights Reserved.
