@@ -1,5 +1,39 @@
 # GranthaKoshaya | ග්‍රන්ථකෝෂය 📖
 
+# System Implementation
+
+If this is used in a school library, it can first be tested with its
+existing manual system and then completely switch to this new system.
+Otherwise, only one section (e.g. - primary section) can be implement
+using this new system after checking section by section.
+
+If this is used in a bookshop, it is best to use this new system over
+time after using it in parallel with the existing manual system.
+
+## Online - <https://granthakoshaya.000webhostapp.com/>
+
+## Local
+
+1.  Install XAMPP or another cross-platform web server to your computer.
+
+2.  Start MY SQL & Apache from Control Panel.
+
+3.  Then, Move the main project folder to this folder.
+    "C:\\xampp\\htdocs"
+
+4.  <http://127.0.0.1/phpmyadmin/> go to phpMyAdmin.
+
+5.  Create New Database and Enter \"granthakoshaya\" for Database Name &
+    Create.
+
+6.  Open the "granthakoshaya.sql" file & Copy text on it.
+
+7.  Go to SQL Tab in phpMyAdmin & paste text that you have copied.
+
+8.  Finally, Run "index.php" File
+    from <http://127.0.0.1/GranthaKoshaya/index.php>
+
+
 # Introduction
 
 A library system is essential for a country. Although Sri Lanka\'s
@@ -237,39 +271,6 @@ The system is divided into two parts, the first part is SearchSystem
 side with database represent the server, and the second part isthe E-Library User Interfaceside that represents the
 client by using PHP , MYSQL and APACHE with WAMP server.
 
-
-# System Implementation
-
-If this is used in a school library, it can first be tested with its
-existing manual system and then completely switch to this new system.
-Otherwise, only one section (e.g. - primary section) can be implement
-using this new system after checking section by section.
-
-If this is used in a bookshop, it is best to use this new system over
-time after using it in parallel with the existing manual system.
-
-## Online - <https://granthakoshaya.000webhostapp.com/>
-
-## Local
-
-1.  Install XAMPP or another cross-platform web server to your computer.
-
-2.  Start MY SQL & Apache from Control Panel.
-
-3.  Then, Move the main project folder to this folder.
-    "C:\\xampp\\htdocs"
-
-4.  <http://127.0.0.1/phpmyadmin/> go to phpMyAdmin.
-
-5.  Create New Database and Enter \"granthakoshaya\" for Database Name &
-    Create.
-
-6.  Open the "granthakoshaya.sql" file & Copy text on it.
-
-7.  Go to SQL Tab in phpMyAdmin & paste text that you have copied.
-
-8.  Finally, Run "index.php" File
-    from <http://127.0.0.1/GranthaKoshaya/index.php>
 
 # Conclusion
 
