@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2022 at 05:44 PM
+-- Generation Time: Aug 22, 2022 at 04:20 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -39,12 +39,13 @@ CREATE TABLE `author` (
 --
 
 INSERT INTO `author` (`Author_ID`, `Author`, `About`, `author_img`) VALUES
-(1, 'Test Author 1', 'aaaa', NULL),
-(2, 'Test Author 2', '44444444444', NULL),
-(3, 'Test Author 3', 'bbbbbbbbbb', NULL),
-(4, 'Test Author 4', NULL, NULL),
-(5, 'Test Author 5', NULL, NULL),
-(6, 'Test Author 6', NULL, NULL);
+(17, 'Martin Wickramasinghe', NULL, '1578705603-martin223.jpg'),
+(22, 'Kumarathunga Munidasa', NULL, '402163991-kumarathunga_munidasakalai.jpg'),
+(23, 'K. Jayathilake', NULL, '915759120-download-(1).jpeg'),
+(24, 'Ediriweera Sarachchandra', NULL, '760181985-ediriweera-sarachchandra.webp'),
+(25, 'T. B. ilangaratne', NULL, '2004517746-download.jpeg'),
+(26, 'Chandana Mendis', NULL, '30968588-4325d090-ff40-478d-b282-5624098d646a.png'),
+(27, 'Unknown Author', NULL, '778036189-3f037af6-87ce-4a37-bb37-55b48029727d.sized-1000x1000.jpg');
 
 -- --------------------------------------------------------
 
@@ -63,9 +64,24 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`cat_id`, `cat_name`, `cat_img`) VALUES
-(1, 'Novels', NULL),
-(2, 'Researches', NULL),
-(9, 'Test Cat', NULL);
+(1, 'Novels', '938215793-novels.webp'),
+(2, 'Researches', '124387329-20-best-research-methodology-books-for-phd-students.webp'),
+(3, 'Action and adventure', '924736529-best-action-advneture-books.webp'),
+(4, 'Biography', '323050232-best-biography-books.jpg'),
+(5, 'Business/economics', '1483379760-best-entrepreneur-books-1024x768.jpeg'),
+(6, 'Crafts/hobbies', '1414201651-612xl78gkkl.jpg'),
+(7, 'Cookbooks', '1949244056-img_20380-cropped.jpg'),
+(8, 'Dictionaries', '1681842200-p7-morales-dictionary-a-20190416.jpg'),
+(9, 'Diaries', '356160051-my2122_cda_elite_lifestyle_2_1350x1350.webp'),
+(10, 'Health/fitness', '59492795-51l9mckpp+l._sy445_sx342_ql70_ml2_.jpg'),
+(11, 'History', '1683227935-552884.jpg'),
+(12, 'Home and garden', '9781579658076_3D-thumb.png'),
+(13, 'Religion', '1443574777-faith-bible-religion-christianity-feature-470x248-1280x720.png'),
+(14, 'Textbooks', '52312101-textbooks.jpg'),
+(15, 'Science & Technology', '854550892-book-title-science-technology-book-title-science-technology-written-spine-111391516.jpg'),
+(16, 'Sports and leisure', '1812982320-a1dpof01epl.jpg'),
+(17, 'Travel', '341952925-2020_04_26_93814_1587874713._large.jpg'),
+(18, 'Others', '518803634-1_s81o15rjkfg-bfdnnc6-gq.jpeg');
 
 -- --------------------------------------------------------
 
@@ -108,12 +124,11 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`id`, `name`, `email`, `password`, `gender`, `address`) VALUES
-(4, 'Sachini', 'sach@gmail.com', 'abc', 'female', 'Piliyandala'),
-(5, 'customer', 'customer@gmail.com', 'abc', 'male', 'TEST'),
-(6, 'Mekala', 'Mekala@gmail.com', '789', 'female', 'Horana'),
-(7, 'Methu', 'Methu@gmail.com', '456', 'female', 'Kiribathgoda'),
-(8, 'Suvi', 'Suvi@gmail.com', '852', 'female', 'Gampaha'),
-(9, 'Nisansala', 'nisa@gmail.com', '963', 'female', 'Kaduwela');
+(1, 'Nelitha', 'nelithavindinu7@gmail.com', 'nelith2006', 'male', 'Keselwaththa'),
+(2, 'customer', 'customer@gmail.com', 'abc', 'male', 'TEST'),
+(3, 'customer 2', 'customer2@gmail.com', '789', 'male', 'net'),
+(4, 'customer 3', 'customer3@gmail.com', '456', 'male', 'net'),
+(5, 'customer 4', 'customer4@gmail.com', '852', 'male', 'net');
 
 -- --------------------------------------------------------
 
@@ -135,13 +150,14 @@ CREATE TABLE `customer_product` (
 --
 
 INSERT INTO `customer_product` (`customer_id`, `product_id`, `qty`, `bill_date`, `is_shipped`, `is_received`) VALUES
-(5, 10, 1, '2021-06-19 12:43:05', 1, 0),
-(5, 15, 1, '2022-07-27 10:48:38', 1, 0),
-(5, 15, 1, '2022-07-28 14:22:17', 1, 0),
-(5, 15, 1, '2022-08-02 16:35:58', 1, 0),
-(5, 21, 2, '2022-07-31 19:41:40', 1, 0),
-(6, 15, 4, '2021-06-20 05:51:58', 1, 0),
-(6, 17, 2, '2021-06-20 05:26:03', 1, 0);
+(2, 1, 3, '2022-08-21 20:57:51', 1, 0),
+(2, 2, 4, '2022-08-21 20:57:51', 1, 0),
+(2, 3, 1, '2022-08-21 20:57:51', 1, 0),
+(2, 4, 2, '2022-08-21 20:57:51', 1, 0),
+(2, 73, 2, '2022-08-22 15:23:45', 1, 0),
+(2, 74, 1, '2022-08-22 15:23:45', 1, 0),
+(2, 76, 1, '2022-08-22 15:46:15', 1, 0),
+(2, 77, 1, '2022-08-22 15:52:11', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -179,7 +195,7 @@ CREATE TABLE `product` (
   `description` varchar(500) DEFAULT NULL,
   `category` varchar(50) DEFAULT NULL,
   `cat_id` int(11) DEFAULT NULL,
-  `Author` varchar(11) DEFAULT NULL,
+  `Author` varchar(100) DEFAULT NULL,
   `Author_ID` int(11) DEFAULT NULL,
   `stars` int(11) DEFAULT NULL,
   `price` double DEFAULT NULL,
@@ -187,7 +203,7 @@ CREATE TABLE `product` (
   `iqty` int(11) DEFAULT NULL,
   `company_id` int(11) DEFAULT NULL,
   `img` varchar(100) DEFAULT NULL,
-  `ebook` varchar(100) DEFAULT NULL
+  `ebook` mediumtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -195,16 +211,15 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `description`, `category`, `cat_id`, `Author`, `Author_ID`, `stars`, `price`, `offer`, `iqty`, `company_id`, `img`, `ebook`) VALUES
-(10, 'Jar Decos', 'A good friend is like a four leaf clover, hard to find and lucky to have. Surprise your bestie with a unique jar decos', 'crafts ', 1, '1', 3, 0, 1000, 0, 8, 1, '../images/product/17201c15.jpeg', NULL),
-(12, 'Love light box', 'Valentine special. Unique gift for your loved ones .portable and light weight. USB powered. Bright full lights. Text can be customized. Automatic RGB colours (7 colours)', 'innovation', 2, '2', 3, 0, 600, 0, 12, 1, '../images/product/188775i4.jpeg', NULL),
-(13, 'Tassel Chandelier', 'Major part of luxury decorations that use to light and hang for the top of the beds. ', NULL, 9, '1', 5, 0, 2000, 0, 5, 1, '../images/product/243915c17.jpeg', NULL),
-(14, 'Greeting Cards', 'The simplest but the most cherished way to show your love for your loved ones. With the love and blessings of the nature .Made from 100% eco-friendly materials', NULL, 1, '2', 4, 0, 350, 0, 15, 1, '../images/product/960311c2.jpg', NULL),
-(15, 'Beach Jar', 'Decorated with various seashells', NULL, 2, NULL, 6, 0, 1500, 0, 11, 1, '../images/product/679324c5.png', NULL),
-(16, 'Dreams Catchers', 'Those who believe in dreamcatchers say that they act as a filter for dreams. They send good dreams for the sleeper and the bad dreams away. More special for lovely once and persons who care you.', NULL, 9, NULL, 2, 0, 1850, 0, 7, 1, '../images/product/828752c11.jpg', NULL),
-(17, 'Photo Collage', 'We will make a photo collage as you wish. Show your love to your homies with lovely memory collection and the beauty of the nature.', NULL, 1, NULL, 6, 0, 2500, 0, 4, 1, '../images/product/5006c1.jpeg', NULL),
-(19, 'Crystalights Panel ', 'Dimension of one Crystalights :-  🔘Length - 13cm 🔘Height - 1.5cm  Features :-  🔘Ultra bright colors 🔘Made by polystrene materials  🔘Remote controllable 🔘16 various colors 🔘04 color patterns (Strobe,shade,blink,smooth) 🔘Can work by 12V power supply 🔘Portable and lightweight  🔘 can control the light speed', NULL, 1, NULL, 2, 0, 4400, 0, 3, 1, '../images/product/456278i6.png', NULL),
-(20, 'PIXELS', 'Pixels are the most wonderful and mind relaxing smart product with millions of pixels with hundred of colors.', NULL, 1, NULL, 4, 0, 3500, 0, 5, 1, '../images/product/671313i2.jpeg', NULL),
-(21, ' Crystalights panel ', 'Dimension of one Crystalights :-  🔘Length - 13cm 🔘Height - 1.5cm  Features :-  🔘Ultra bright colors 🔘Made by polystrene materials  🔘Remote controllable 🔘16 various colors 🔘04 color patterns (Strobe,shade,blink,smooth) 🔘Can work by 12V power supply 🔘Portable and lightweight  🔘 can controll the light speed', NULL, 1, NULL, 5, 0, 3500, 0, 5, 1, '../images/product/352858i7.jpeg', NULL);
+(1, 'Gam Peraliya', 'A girl is forced into a loveless marriage by her family. Edit Report This. An adaptation of Martin Wickremasinghe\'s seminal Sinhala novel, the story revolves around Nanda (Punya Heendeniya) and Piyal (Henry Jayasena), whose affair is complicated due to their class differences.', 'Novel', 1, 'Martin Wickramasinghe', 17, 0, 490, 0, 10, 1, '../images/product/9757652.jpg', './ebooks/ගම්පෙරළිය-.pdf'),
+(2, 'Madol Doowa', 'Mdol Doowa is a children\'s novel and coming-of-age story written by Sri Lankan writer Martin Wickramasinghe and first published in 1947. The book recounts the misadventures of Upali Giniwella and his friends on the Southern coast of Sri Lanka during the 1890s.', 'Novel', 1, 'Martin Wickramasinghe', 17, 0, 300, 0, 23, 1, '../images/product/download.jpeg', './ebooks/Madol Duwa.pdf'),
+(3, 'Magul Kaama', 'මඟුල් කෑම - හෙළ ළමා සාහිත්‍යයට අනුපමේය සේවාවක් කළ හෙළයේ මහ ඉසි කුමාරතුංග මුනිදාස සූරීන් විසින් සම්පාදිත මෙම කෘතිය දිගු කලක් ළමා ලෝකයේ ආදරය දිනාගත් විශිෂ්ට කෘතියකි.', 'Novel', 1, 'Kumaratunga Munidasa', 22, NULL, 500, 0, 20, 1, '../images/product/LS645114OE-01-E.webp', './ebooks/මගුල්-කෑම.pdf'),
+(4, 'Hath Pana', 'This is the English translation of \'Hath pana\' which is a wonderful story about Neraluwe village leader Kusal Hami\'s stupid son \'Kiri Hami\'. \'Hath pana\' is a masterpiece that delighted the childhood world of the creator Kumaratunga Munidasa who was awarded the title of \'Helaye Maha Isi\'.', 'Novels', 1, 'Kumaratunga Munidasa', 22, NULL, 300, 0, 25, 1, '../images/product/51-QpMt9-xL.jpg', './ebooks/හත්පන.pdf'),
+(73, 'Malagiya Aththo', 'Ediriweera Sarachchandra\'s novel based on real life events in Japan', 'Novels', 1, 'Ediriweera Sarachchandra', 24, NULL, 300, NULL, 20, 1, '../images/product/1092206945-malagiya.jpg', '../ebooks/malagiya-aththo.pdf'),
+(74, 'Aba Yaluwo', '', 'Novels', 1, 'T. B. ilangaratne', 25, NULL, 300, NULL, 10, 1, '../images/product/1821027617-4575781.jpg', '../ebooks/506098193-aba-yaluwo.jpg'),
+(75, 'Kaliyugaya', '', 'Novels', 1, 'Martin Wickramasinghe', 17, NULL, 400, NULL, 20, 1, '../images/product/2044197223-10422852.jpg', '../ebooks/31371654-කලි_යුගය_මාර්ටින්_වික්_රමසිංහ_ශූරීණ්_kali_yugaya.pdf'),
+(76, 'අභිරහස් දොස්තර සමඟ ෂර්ලොක් හෝම්ස් සහ අතුරුදහන් වූ නෞකාව', 'Accompanied by Dr. Watson, master sleuth Sherlock Holmes has already encountered the evil young hedonist Edward Hyde, and knew he was strangely connected with Henry Jekyll, the wealthy, respectable London doctor.', 'Action and adventure', 3, 'Chandana Mendis', 26, NULL, 500, NULL, 5, 1, '../images/product/1374561308-14716487.jpg', '../ebooks/981478654-14716487.jpg'),
+(77, 'Sri Lanka', 'Details important for travelling in Sri Lanka', 'Travel', 17, 'Unknown Author', 27, NULL, 50, NULL, 30, 1, '../images/product/314972658-d3b6ce9f9806fbc7ff8890910974c93a.jpg', '../ebooks/1585696629-sri-lanka-13e-2015-(-pdfdrive-).pdf');
 
 --
 -- Indexes for dumped tables
@@ -262,13 +277,13 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `author`
 --
 ALTER TABLE `author`
-  MODIFY `Author_ID` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `Author_ID` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `company`
@@ -292,7 +307,7 @@ ALTER TABLE `feedbacks`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- Constraints for dumped tables
@@ -304,12 +319,6 @@ ALTER TABLE `product`
 ALTER TABLE `customer_product`
   ADD CONSTRAINT `customer_product_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`),
   ADD CONSTRAINT `customer_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`);
-
---
--- Constraints for table `product`
---
-ALTER TABLE `product`
-  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `author` (`Author_ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

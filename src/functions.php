@@ -275,7 +275,7 @@ function getProductById($id)
 
                             <input type="number" value="0" id="addtocart_qty" max="<?php echo $stock ?>" min="0" />
                             <span><button id="addtocart_btn" class="btn">Add to Cart</button></span>
-                            <button class="btn" onclick="view_pdf()"><a class="unableClick" href="<?php echo $row ['ebook'] ?>">Read Book (Free)</a></button>
+                            <button class="btn" onclick="view_pdf()"><a class="unableClick" href="<?php echo "./ebooks/".$row['ebook'] ?>">Read Book (Free)</a></button>
                             
                         <?php
                         }

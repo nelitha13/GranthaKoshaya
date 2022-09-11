@@ -24,6 +24,7 @@
                 var div = document.getElementById('dvEmbedPdfviewer');
                 //var URl = $(this).attr('href') + "#view=FitH&toolbar=0";
                 var URl = $(this).attr('href') + "#toolbar=0&navpanes=0&scrollbar=0";
+                console.log(URL);
                 var EmbedHtml = "<embed id='embed' src='" + URl + "' height='600' width='1000' />"
                 div.innerHTML = EmbedHtml;
             });

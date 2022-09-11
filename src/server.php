@@ -310,7 +310,7 @@ if (isset($_POST['add-product'])){
 	if(move_uploaded_file($file_loc, $folder . $final_file) && move_uploaded_file($file_loc_pdf, $folder_pdf . $final_file_pdf)) {
 		$image =$folder. $final_file;
 		$pdf =$folder_pdf. $final_file_pdf;
-		$query = "insert into product(name,description,category,cat_id,Author,Author_ID,price,iqty,company_id,img,ebook) values ('".$name."', '".$description."', '".$category["name"]."', '".$category["id"]."', '".$author["name"]."', '".$author["id"]."', '".$price."', '".$iqty."', '".$_SESSION['id']."', '".$image."', '".$pdf."')";
+		$query = "insert into product(name,description,category,cat_id,Author,Author_ID,price,iqty,company_id,img,ebook) values ('".$name."', '".$description."', '".$category["name"]."', '".$category["id"]."', '".$author["name"]."', '".$author["id"]."', '".$price."', '".$iqty."', '".$_SESSION['id']."', '".$image."', '".$final_file_pdf."')";
 		$results=mysqli_query($db,$query);
 		if($results){
 			$_SESSION['message']='Product Added Successfully';
